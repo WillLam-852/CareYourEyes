@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  CareYourEyes
+
+  Created by Lam Wun Yin on 12/4/2023.
+  
+*/
+
+// MARK: - Alert Title
+"error" = "Error";
+"permissionRequest" = "Permission Required";
+
+// MARK: - Alert Message
+"enablePermission" = "Please enable Camera Permission to use this function.";
+"unableCaptureMedia" = "Unable to capture media";
+
+// MARK: - Alert Buttons
+"OK" = "OK";
+"settings" = "Settings";

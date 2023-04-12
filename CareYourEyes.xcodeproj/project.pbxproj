@@ -13,7 +13,30 @@
 		0D37503E29E53D46003D6F34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37503C29E53D46003D6F34 /* Main.storyboard */; };
 		0D37504029E53D47003D6F34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D37503F29E53D47003D6F34 /* Assets.xcassets */; };
 		0D37504329E53D47003D6F34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37504129E53D47003D6F34 /* LaunchScreen.storyboard */; };
+		0D37504B29E5609E003D6F34 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37504A29E5609E003D6F34 /* CameraViewController.swift */; };
+		0D37505129E56252003D6F34 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37505029E56252003D6F34 /* OverlayView.swift */; };
+		0D37505A29E5637F003D6F34 /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37505929E5637F003D6F34 /* CameraFeedManager.swift */; };
+		0D37505C29E56451003D6F34 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37505B29E56451003D6F34 /* Constant.swift */; };
+		0D37505F29E564A1003D6F34 /* SessionSetupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37505E29E564A1003D6F34 /* SessionSetupResult.swift */; };
+		0D37506229E567E2003D6F34 /* AVCaptureVideoOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37506129E567E2003D6F34 /* AVCaptureVideoOrientation.swift */; };
+		0D37506529E64DD0003D6F34 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D37506729E64DD0003D6F34 /* Localizable.strings */; };
+		0D3750C229E6B130003D6F34 /* HolisticTracker.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3750C029E6B12A003D6F34 /* HolisticTracker.xcframework */; };
+		0D3750C329E6B131003D6F34 /* HolisticTracker.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3750C029E6B12A003D6F34 /* HolisticTracker.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0D37505729E562D4003D6F34 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0D3750C329E6B131003D6F34 /* HolisticTracker.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D37503329E53D46003D6F34 /* CareYourEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareYourEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,7 +46,25 @@
 		0D37503D29E53D46003D6F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D37503F29E53D47003D6F34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D37504229E53D47003D6F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0D37504429E53D47003D6F34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D37504A29E5609E003D6F34 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		0D37505029E56252003D6F34 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		0D37505929E5637F003D6F34 /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
+		0D37505B29E56451003D6F34 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0D37505E29E564A1003D6F34 /* SessionSetupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSetupResult.swift; sourceTree = "<group>"; };
+		0D37506129E567E2003D6F34 /* AVCaptureVideoOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureVideoOrientation.swift; sourceTree = "<group>"; };
+		0D37506629E64DD0003D6F34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0D37506A29E64EDF003D6F34 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
+		0D37506B29E64EDF003D6F34 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0D37506C29E64EDF003D6F34 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0D37506D29E64EE7003D6F34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		0D37506E29E64EE7003D6F34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0D37506F29E64EE7003D6F34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0D37507029E64EEB003D6F34 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		0D37507129E64EEB003D6F34 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0D37507229E64EEB003D6F34 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0D37507B29E65D7A003D6F34 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D37509D29E6A8DF003D6F34 /* CareYourEyes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CareYourEyes-Bridging-Header.h"; sourceTree = "<group>"; };
+		0D3750C029E6B12A003D6F34 /* HolisticTracker.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HolisticTracker.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D3750C229E6B130003D6F34 /* HolisticTracker.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +98,72 @@
 		0D37503529E53D46003D6F34 /* CareYourEyes */ = {
 			isa = PBXGroup;
 			children = (
+				0D37504D29E561F7003D6F34 /* Views */,
+				0D37504C29E561DB003D6F34 /* Controllers */,
+				0D37505829E56363003D6F34 /* Models */,
+				0D37506029E567CC003D6F34 /* Extensions */,
+				0D37505229E562A9003D6F34 /* Frameworks */,
 				0D37503629E53D46003D6F34 /* AppDelegate.swift */,
 				0D37503829E53D46003D6F34 /* SceneDelegate.swift */,
-				0D37503A29E53D46003D6F34 /* ViewController.swift */,
-				0D37503C29E53D46003D6F34 /* Main.storyboard */,
-				0D37503F29E53D47003D6F34 /* Assets.xcassets */,
-				0D37504129E53D47003D6F34 /* LaunchScreen.storyboard */,
-				0D37504429E53D47003D6F34 /* Info.plist */,
+				0D37505B29E56451003D6F34 /* Constant.swift */,
+				0D37507B29E65D7A003D6F34 /* Info.plist */,
+				0D37506729E64DD0003D6F34 /* Localizable.strings */,
 			);
 			path = CareYourEyes;
+			sourceTree = "<group>";
+		};
+		0D37504C29E561DB003D6F34 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D37503A29E53D46003D6F34 /* ViewController.swift */,
+				0D37504A29E5609E003D6F34 /* CameraViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0D37504D29E561F7003D6F34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0D37503C29E53D46003D6F34 /* Main.storyboard */,
+				0D37504129E53D47003D6F34 /* LaunchScreen.storyboard */,
+				0D37503F29E53D47003D6F34 /* Assets.xcassets */,
+				0D37505029E56252003D6F34 /* OverlayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0D37505229E562A9003D6F34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D3750C029E6B12A003D6F34 /* HolisticTracker.xcframework */,
+				0D37509D29E6A8DF003D6F34 /* CareYourEyes-Bridging-Header.h */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D37505829E56363003D6F34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0D37505D29E56488003D6F34 /* Camera Feed */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0D37505D29E56488003D6F34 /* Camera Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0D37505929E5637F003D6F34 /* CameraFeedManager.swift */,
+				0D37505E29E564A1003D6F34 /* SessionSetupResult.swift */,
+			);
+			path = "Camera Feed";
+			sourceTree = "<group>";
+		};
+		0D37506029E567CC003D6F34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0D37506129E567E2003D6F34 /* AVCaptureVideoOrientation.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +176,7 @@
 				0D37502F29E53D46003D6F34 /* Sources */,
 				0D37503029E53D46003D6F34 /* Frameworks */,
 				0D37503129E53D46003D6F34 /* Resources */,
+				0D37505729E562D4003D6F34 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -109,6 +209,9 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-HK",
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 0D37502A29E53D46003D6F34;
 			productRefGroup = 0D37503429E53D46003D6F34 /* Products */;
@@ -126,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D37504329E53D47003D6F34 /* LaunchScreen.storyboard in Resources */,
+				0D37506529E64DD0003D6F34 /* Localizable.strings in Resources */,
 				0D37504029E53D47003D6F34 /* Assets.xcassets in Resources */,
 				0D37503E29E53D46003D6F34 /* Main.storyboard in Resources */,
 			);
@@ -138,9 +242,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D37505C29E56451003D6F34 /* Constant.swift in Sources */,
 				0D37503B29E53D46003D6F34 /* ViewController.swift in Sources */,
+				0D37504B29E5609E003D6F34 /* CameraViewController.swift in Sources */,
+				0D37506229E567E2003D6F34 /* AVCaptureVideoOrientation.swift in Sources */,
 				0D37503729E53D46003D6F34 /* AppDelegate.swift in Sources */,
 				0D37503929E53D46003D6F34 /* SceneDelegate.swift in Sources */,
+				0D37505A29E5637F003D6F34 /* CameraFeedManager.swift in Sources */,
+				0D37505129E56252003D6F34 /* OverlayView.swift in Sources */,
+				0D37505F29E564A1003D6F34 /* SessionSetupResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +261,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D37503D29E53D46003D6F34 /* Base */,
+				0D37506A29E64EDF003D6F34 /* zh-HK */,
+				0D37506D29E64EE7003D6F34 /* zh-Hans */,
+				0D37507029E64EEB003D6F34 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -159,8 +272,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D37504229E53D47003D6F34 /* Base */,
+				0D37506B29E64EDF003D6F34 /* zh-HK */,
+				0D37506E29E64EE7003D6F34 /* zh-Hans */,
+				0D37507129E64EEB003D6F34 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0D37506729E64DD0003D6F34 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D37506629E64DD0003D6F34 /* en */,
+				0D37506C29E64EDF003D6F34 /* zh-HK */,
+				0D37506F29E64EE7003D6F34 /* zh-Hans */,
+				0D37507229E64EEB003D6F34 /* zh-Hant */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -170,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -222,6 +350,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "CareYourEyes/Frameworks/CareYourEyes-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -230,6 +359,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -275,6 +405,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "CareYourEyes/Frameworks/CareYourEyes-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -290,11 +421,11 @@
 				DEVELOPMENT_TEAM = T3N6692BLL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CareYourEyes/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera to analyze movements";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,11 +449,11 @@
 				DEVELOPMENT_TEAM = T3N6692BLL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CareYourEyes/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera to analyze movements";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

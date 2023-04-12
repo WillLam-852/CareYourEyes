@@ -1,0 +1,19 @@
+/*
+  Localizable.strings
+  CareYourEyes
+
+  Created by Lam Wun Yin on 12/4/2023.
+  
+*/
+
+// MARK: - Alert Title
+"error" = "错误";
+"permissionRequest" = "需要权限";
+
+// MARK: - Alert Message
+"enablePermission" = "请启用相机权限以使用此功能";
+"unableCaptureMedia" = "无法启用相机";
+
+// MARK: - Alert Buttons
+"OK" = "确定";
+"settings" = "设定";
