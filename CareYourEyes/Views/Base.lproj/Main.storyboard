@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuG-fm-cqD">
-                                <rect key="frame" x="131.66666666666666" y="408.66666666666669" width="129.99999999999997" height="35"/>
+                                <rect key="frame" x="131.66666666666663" y="408.66666666666669" width="130" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Open Camera"/>
                                 <connections>

@@ -13,6 +13,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Tell the camera view which orientation currently is
+        let deviceOrientation = self.view.window?.windowScene?.interfaceOrientation ?? .unknown
+        if let cameraVC = segue.destination as? CameraViewController {
+            cameraVC.deviceOrientation = deviceOrientation
+        }
+        
+    }
 
 
 }

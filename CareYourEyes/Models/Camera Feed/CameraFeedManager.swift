@@ -115,7 +115,7 @@ final class CameraFeedManager: NSObject {
     }
         
     
-    public func configureSession(windowOrientation: UIInterfaceOrientation, sampleBufferDelegate: AVCaptureVideoDataOutputSampleBufferDelegate) {
+    public func configureSession(interfaceOrientation: UIInterfaceOrientation, sampleBufferDelegate: AVCaptureVideoDataOutputSampleBufferDelegate) {
         self.sessionQueue.async {
             if self.setupResult != .success {
                 return
@@ -123,27 +123,17 @@ final class CameraFeedManager: NSObject {
             
             self.captureSession.beginConfiguration()
             self.captureSession.sessionPreset = .photo
-            var isFrontCamera: Bool = false
             
+            var initialVideoOrientation: AVCaptureVideoOrientation = .portrait
+            if interfaceOrientation != .unknown {
+                if let videoOrientation = AVCaptureVideoOrientation(interfaceOrientation: interfaceOrientation) {
+                    initialVideoOrientation = videoOrientation
+                }
+            }
+
             // Add video input
             do {
-                var defaultVideoDevice: AVCaptureDevice?
-                
-                if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) {
-                    // Default to the front wide angle camera.
-                    defaultVideoDevice = frontCameraDevice
-                    isFrontCamera = true
-                } else if let dualCameraDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back) {
-                    // If a front wide angle camera is not available, Default to the back dual camera
-                    defaultVideoDevice = dualCameraDevice
-                } else if let dualWideCameraDevice = AVCaptureDevice.default(.builtInDualWideCamera, for: .video, position: .back) {
-                    // If a back dual camera is not available, default to the rear dual wide camera.
-                    defaultVideoDevice = dualWideCameraDevice
-                } else if let backCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) {
-                    // If a rear dual camera is not available, default to the rear wide angle camera.
-                    defaultVideoDevice = backCameraDevice
-                }
-                guard let videoDevice = defaultVideoDevice else {
+                guard let videoDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else {
                     print("ERROR: [configureSession] Default video device is unavailable.")
                     self.setupResult = .configurationFailed
                     self.captureSession.commitConfiguration()
@@ -155,13 +145,6 @@ final class CameraFeedManager: NSObject {
                 if self.captureSession.canAddInput(videoDeviceInput) {
                     self.captureSession.addInput(videoDeviceInput)
                     self.videoDeviceInput = videoDeviceInput
-                    
-                    var initialVideoOrientation: AVCaptureVideoOrientation = .portrait
-                    if windowOrientation != .unknown {
-                        if let videoOrientation = AVCaptureVideoOrientation(interfaceOrientation: windowOrientation) {
-                            initialVideoOrientation = videoOrientation
-                        }
-                    }
                     self.videoOrientation = initialVideoOrientation
                 } else {
                     print("ERROR: [configureSession] Couldn't add video device input to the session.")
@@ -183,13 +166,13 @@ final class CameraFeedManager: NSObject {
             self.videoDeviceOutput.setSampleBufferDelegate(sampleBufferDelegate, queue: .main)
             if self.captureSession.canAddOutput(self.videoDeviceOutput) {
                 self.captureSession.addOutput(self.videoDeviceOutput)
-                self.captureSession.connections.first?.videoOrientation = .portrait
+                self.captureSession.connections.first?.videoOrientation = initialVideoOrientation
                 if let connection = self.videoDeviceOutput.connection(with: .video) {
                     if connection.isVideoStabilizationSupported {
                         connection.preferredVideoStabilizationMode = .auto
                     }
                     if connection.isVideoMirroringSupported {
-                        connection.isVideoMirrored = isFrontCamera
+                        connection.isVideoMirrored = true
                     }
                 }
             } else {
@@ -204,30 +187,14 @@ final class CameraFeedManager: NSObject {
     }
     
     
-    public func switchCamera() {
+    public func updateCamera(newOrientation: UIDeviceOrientation) {
         self.sessionQueue.async {
             let currentVideoDevice = self.videoDeviceInput.device
-            let currentPosition = currentVideoDevice.position
-
-            let backVideoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInDualWideCamera, .builtInWideAngleCamera], mediaType: .video, position: .back)
             let frontVideoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInTrueDepthCamera, .builtInWideAngleCamera], mediaType: .video, position: .front)
-            var newVideoDevice: AVCaptureDevice? = nil
             
-            switch currentPosition {
-            case .unspecified, .front:
-                newVideoDevice = backVideoDeviceDiscoverySession.devices.first
-                
-            case .back:
-                newVideoDevice = frontVideoDeviceDiscoverySession.devices.first
-                
-            @unknown default:
-                print("ERROR: [switchCamera] Unknown capture position. Defaulting to back, dual-wide-camera.")
-                newVideoDevice = AVCaptureDevice.default(.builtInDualWideCamera, for: .video, position: .back)
-            }
-            
-            if let videoDevice = newVideoDevice {
+            if let newVideoDevice = frontVideoDeviceDiscoverySession.devices.first {
                 do {
-                    let videoDeviceInput = try AVCaptureDeviceInput(device: videoDevice)
+                    let videoDeviceInput = try AVCaptureDeviceInput(device: newVideoDevice)
                     
                     self.captureSession.beginConfiguration()
                     
@@ -245,13 +212,15 @@ final class CameraFeedManager: NSObject {
                     }
                     
                     self.captureSession.sessionPreset = .photo
-                    self.captureSession.connections.first?.videoOrientation = .portrait
+                    if let videoOrientation = AVCaptureVideoOrientation(deviceOrientation: newOrientation) {
+                        self.captureSession.connections.first?.videoOrientation = videoOrientation
+                    }
                     if let connection = self.videoDeviceOutput.connection(with: .video) {
                         if connection.isVideoStabilizationSupported {
                             connection.preferredVideoStabilizationMode = .auto
                         }
                         if connection.isVideoMirroringSupported {
-                            connection.isVideoMirrored = currentPosition == .back
+                            connection.isVideoMirrored = true
                         }
                     }
                     

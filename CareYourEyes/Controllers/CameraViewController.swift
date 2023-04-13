@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 
 class CameraViewController: UIViewController {
-
+    
     @IBOutlet weak var overlayView: OverlayView!
     
     // MARK: - Tracker
@@ -27,10 +27,8 @@ class CameraViewController: UIViewController {
     /// Flag to make sure there's only one frame processed at each moment.
     private var poseModelIsRunning = false
     
-    private var windowOrientation: UIInterfaceOrientation {
-        return self.view.window?.windowScene?.interfaceOrientation ?? .unknown
-    }
-
+    var deviceOrientation: UIInterfaceOrientation = .unknown
+    
     
     // MARK: - View Handling Methods
 
@@ -38,7 +36,7 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
 
         self.cameraFeedManager.authorizeCamera()
-        self.cameraFeedManager.configureSession(windowOrientation: self.windowOrientation, sampleBufferDelegate: self)
+        self.cameraFeedManager.configureSession(interfaceOrientation: deviceOrientation, sampleBufferDelegate: self)
         
         self.holisticTracker!.delegate = self
         self.holisticTracker!.startGraph()
