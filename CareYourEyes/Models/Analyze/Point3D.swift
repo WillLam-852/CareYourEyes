@@ -62,6 +62,13 @@ class Point3D: CustomStringConvertible {
         }
         return Point3D(x: newX, y: newY, z: newZ)
     }
+    
+    
+    // MARK: - Analyze Points
+    
+    public func isOverlapping(_ point: Point3D) -> Bool {
+        return Point3D.calculateDistance(self, point) < K.KeyPointAnalysis.overlappingDistance
+    }
 
 }
 

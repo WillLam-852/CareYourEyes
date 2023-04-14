@@ -31,6 +31,14 @@
 		0D3750D329E79CFB003D6F34 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750D229E79CFB003D6F34 /* Double.swift */; };
 		0D3750D529E79D2E003D6F34 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750D429E79D2E003D6F34 /* Axis.swift */; };
 		0D3750D729E7BC20003D6F34 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750D629E7BC20003D6F34 /* UIImage.swift */; };
+		0DB56CBD29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CBC29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift */; };
+		0DB56CC029E7C0DE00D36AD5 /* HandKeyLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CBF29E7C0DE00D36AD5 /* HandKeyLine.swift */; };
+		0DB56CC229E941CD00D36AD5 /* MovementAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC129E941CD00D36AD5 /* MovementAnalyzer.swift */; };
+		0DB56CC529E9421900D36AD5 /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC429E9421900D36AD5 /* Face.swift */; };
+		0DB56CC729E942C200D36AD5 /* FaceKeyPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC629E942C200D36AD5 /* FaceKeyPoint.swift */; };
+		0DB56CC929E9432B00D36AD5 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC829E9432B00D36AD5 /* Side.swift */; };
+		0DB56CCB29E9435800D36AD5 /* FaceKeyPointName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CCA29E9435800D36AD5 /* FaceKeyPointName.swift */; };
+		0DB56CCD29E97A6100D36AD5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB56CCC29E97A6100D36AD5 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +91,14 @@
 		0D3750D229E79CFB003D6F34 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		0D3750D429E79D2E003D6F34 /* Axis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
 		0D3750D629E7BC20003D6F34 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		0DB56CBC29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewExtraInformation.swift; sourceTree = "<group>"; };
+		0DB56CBF29E7C0DE00D36AD5 /* HandKeyLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandKeyLine.swift; sourceTree = "<group>"; };
+		0DB56CC129E941CD00D36AD5 /* MovementAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementAnalyzer.swift; sourceTree = "<group>"; };
+		0DB56CC429E9421900D36AD5 /* Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
+		0DB56CC629E942C200D36AD5 /* FaceKeyPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceKeyPoint.swift; sourceTree = "<group>"; };
+		0DB56CC829E9432B00D36AD5 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
+		0DB56CCA29E9435800D36AD5 /* FaceKeyPointName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceKeyPointName.swift; sourceTree = "<group>"; };
+		0DB56CCC29E97A6100D36AD5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +142,7 @@
 				0D37505B29E56451003D6F34 /* Constant.swift */,
 				0D37507B29E65D7A003D6F34 /* Info.plist */,
 				0D37506729E64DD0003D6F34 /* Localizable.strings */,
+				0DB56CCC29E97A6100D36AD5 /* Media.xcassets */,
 			);
 			path = CareYourEyes;
 			sourceTree = "<group>";
@@ -144,8 +161,8 @@
 			children = (
 				0D37503C29E53D46003D6F34 /* Main.storyboard */,
 				0D37504129E53D47003D6F34 /* LaunchScreen.storyboard */,
+				0DB56CBE29E7C0A100D36AD5 /* OverlayView */,
 				0D37503F29E53D47003D6F34 /* Assets.xcassets */,
-				0D37505029E56252003D6F34 /* OverlayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				0D37505D29E56488003D6F34 /* Camera Feed */,
+				0DB56CC329E9420900D36AD5 /* Face */,
 				0D3750C429E79A20003D6F34 /* Hand */,
 				0D3750CD29E79AA5003D6F34 /* Analyze */,
 			);
@@ -193,6 +211,7 @@
 			children = (
 				0D3750C529E79A34003D6F34 /* Hand.swift */,
 				0D3750C729E79A5E003D6F34 /* HandKeyPoint.swift */,
+				0DB56CBF29E7C0DE00D36AD5 /* HandKeyLine.swift */,
 				0D3750C929E79A6F003D6F34 /* HandPartName.swift */,
 				0D3750CB29E79A87003D6F34 /* HandKeyPointName.swift */,
 			);
@@ -202,11 +221,32 @@
 		0D3750CD29E79AA5003D6F34 /* Analyze */ = {
 			isa = PBXGroup;
 			children = (
+				0DB56CC129E941CD00D36AD5 /* MovementAnalyzer.swift */,
 				0D3750CE29E79ABA003D6F34 /* Point3D.swift */,
 				0D3750D429E79D2E003D6F34 /* Axis.swift */,
 				0D3750D029E79ADE003D6F34 /* KeyPoint.swift */,
 			);
 			path = Analyze;
+			sourceTree = "<group>";
+		};
+		0DB56CBE29E7C0A100D36AD5 /* OverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				0D37505029E56252003D6F34 /* OverlayView.swift */,
+				0DB56CBC29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift */,
+			);
+			path = OverlayView;
+			sourceTree = "<group>";
+		};
+		0DB56CC329E9420900D36AD5 /* Face */ = {
+			isa = PBXGroup;
+			children = (
+				0DB56CC429E9421900D36AD5 /* Face.swift */,
+				0DB56CC629E942C200D36AD5 /* FaceKeyPoint.swift */,
+				0DB56CCA29E9435800D36AD5 /* FaceKeyPointName.swift */,
+				0DB56CC829E9432B00D36AD5 /* Side.swift */,
+			);
+			path = Face;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB56CCD29E97A6100D36AD5 /* Media.xcassets in Resources */,
 				0D37504329E53D47003D6F34 /* LaunchScreen.storyboard in Resources */,
 				0D37506529E64DD0003D6F34 /* Localizable.strings in Resources */,
 				0D37504029E53D47003D6F34 /* Assets.xcassets in Resources */,
@@ -287,12 +328,17 @@
 			files = (
 				0D37505C29E56451003D6F34 /* Constant.swift in Sources */,
 				0D37503B29E53D46003D6F34 /* ViewController.swift in Sources */,
+				0DB56CC929E9432B00D36AD5 /* Side.swift in Sources */,
 				0D3750D329E79CFB003D6F34 /* Double.swift in Sources */,
 				0D3750D529E79D2E003D6F34 /* Axis.swift in Sources */,
+				0DB56CC029E7C0DE00D36AD5 /* HandKeyLine.swift in Sources */,
 				0D37504B29E5609E003D6F34 /* CameraViewController.swift in Sources */,
 				0D3750C829E79A5E003D6F34 /* HandKeyPoint.swift in Sources */,
 				0D37506229E567E2003D6F34 /* AVCaptureVideoOrientation.swift in Sources */,
+				0DB56CC729E942C200D36AD5 /* FaceKeyPoint.swift in Sources */,
 				0D37503729E53D46003D6F34 /* AppDelegate.swift in Sources */,
+				0DB56CC229E941CD00D36AD5 /* MovementAnalyzer.swift in Sources */,
+				0DB56CC529E9421900D36AD5 /* Face.swift in Sources */,
 				0D37503929E53D46003D6F34 /* SceneDelegate.swift in Sources */,
 				0D3750C629E79A34003D6F34 /* Hand.swift in Sources */,
 				0D3750CA29E79A6F003D6F34 /* HandPartName.swift in Sources */,
@@ -300,6 +346,8 @@
 				0D37505A29E5637F003D6F34 /* CameraFeedManager.swift in Sources */,
 				0D37505129E56252003D6F34 /* OverlayView.swift in Sources */,
 				0D37505F29E564A1003D6F34 /* SessionSetupResult.swift in Sources */,
+				0DB56CBD29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift in Sources */,
+				0DB56CCB29E9435800D36AD5 /* FaceKeyPointName.swift in Sources */,
 				0D3750D729E7BC20003D6F34 /* UIImage.swift in Sources */,
 				0D3750D129E79ADE003D6F34 /* KeyPoint.swift in Sources */,
 				0D3750CF29E79ABA003D6F34 /* Point3D.swift in Sources */,

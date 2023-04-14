@@ -25,4 +25,9 @@ public enum K {
         public static let settings = "settings"
     }
     
+    // MARK: - Threshold
+    struct KeyPointAnalysis {
+        public static let overlappingDistance = 0.1
+    }
+    
 }

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuG-fm-cqD">
-                                <rect key="frame" x="131.66666666666663" y="408.66666666666669" width="130" height="35"/>
+                                <rect key="frame" x="131.66666666666666" y="408.66666666666669" width="129.99999999999997" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Open Camera"/>
                                 <connections>
@@ -48,7 +48,20 @@
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="to1-pf-w8H" customClass="OverlayView" customModule="CareYourEyes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <subviews>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="m0T-ml-nuM">
+                                        <rect key="frame" x="121.66666666666669" y="8" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="cH8-3V-T2z"/>
+                                            <constraint firstAttribute="width" constant="150" id="nBN-kB-7Om"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="m0T-ml-nuM" firstAttribute="top" secondItem="to1-pf-w8H" secondAttribute="top" constant="8" id="HAm-hJ-ERF"/>
+                                    <constraint firstItem="m0T-ml-nuM" firstAttribute="centerX" secondItem="to1-pf-w8H" secondAttribute="centerX" id="RK8-Yf-Ojs"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WsL-lh-lPy"/>
@@ -63,6 +76,7 @@
                     <navigationItem key="navigationItem" id="nmK-ZQ-kXV"/>
                     <connections>
                         <outlet property="overlayView" destination="to1-pf-w8H" id="KwX-et-yRL"/>
+                        <outlet property="tickImageView" destination="m0T-ml-nuM" id="rFf-JI-Hpe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXA-IL-jWL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -89,6 +103,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="tick" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

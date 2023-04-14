@@ -7,6 +7,7 @@
 
 protocol KeyPoint: Equatable {
     
+    var keyPointNumber: Int { get }
     var point: Point3D? { get }
     static func == (lhs: Self, rhs: Self) -> Bool
 
