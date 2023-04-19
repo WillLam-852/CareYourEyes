@@ -8,6 +8,8 @@
 enum FaceKeyPointName {
     
     case midPointBetweenEyeAndNose
+    case eyebrowEdge
+    case aboveCheek
     case notHandled
     
 }
