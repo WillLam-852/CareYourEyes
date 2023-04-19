@@ -5,8 +5,9 @@
 //  Created by Lam Wun Yin on 11/4/2023.
 //
 
-import UIKit
 import AVFoundation
+import os
+import UIKit
 
 class CameraViewController: UIViewController {
     
@@ -30,15 +31,16 @@ class CameraViewController: UIViewController {
     
     // MARK: - Key Points Models
     
-    /// Face Infromation from mediapipe to be shown in overlay view
-    private var face: Face?
-    /// Hand Infromation from mediapipe to be shown in overlay view
-    private var leftHand: Hand?
-    private var rightHand: Hand?
+    /// Holistic Infromation from mediapipe to be shown in overlay view
+    private var holistic = Holistic()
     
     // MARK: - Analyzer
     /// For analyzing movement
     private var movementAnalyzer = MovementAnalyzer()
+    
+    // MARK: - Movement
+    /// Current movement
+    var currentMovement: AbstractMovement = MovementOne()
     
     
     // MARK: - View Handling Methods
@@ -124,30 +126,33 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         // Show the real-time video thread
         DispatchQueue.main.async {
             let cameraImage = UIImage(ciImage: CIImage(cvPixelBuffer: pixelBuffer))
-            self.drawImage(image: cameraImage)
+            self.drawImage(image: cameraImage, movement: self.currentMovement)
         }
-        if let face = self.face,
-           let leftHand = self.leftHand,
-           let rightHand = self.rightHand {
-            self.movementAnalyzer.importKeyPoints(face, leftHand, rightHand)
+        
+        do {
+            let checkResult = try self.movementAnalyzer.check(holistic: self.holistic, movement: self.currentMovement)
+            if checkResult {
+                self.tickImageView.isHidden = false
+            } else {
+                self.tickImageView.isHidden = true
+            }
+        } catch {
+            if #available(iOS 14.0, *) {
+                os_log("\(error.localizedDescription)")
+            }
         }
-        if self.movementAnalyzer.movementOne() {
-            self.tickImageView.isHidden = false
-        } else {
-            self.tickImageView.isHidden = true
-        }
+        
         // Send the image to analyse information
         self.holisticTracker!.send(pixelBuffer, timestamp: CMSampleBufferGetPresentationTimeStamp(sampleBuffer))
         CVPixelBufferUnlockBaseAddress(pixelBuffer, CVPixelBufferLockFlags.readOnly)
     }
     
     /// Draw keypoints in the image
-    func drawImage(image: UIImage) {
+    func drawImage(image: UIImage, movement: AbstractMovement) {
         let overlayViewExtraInformation = OverlayViewExtraInformation(
             image: image,
-            face: self.face,
-            leftHand: self.leftHand,
-            rightHand: self.rightHand
+            holistic: self.holistic,
+            movement: self.currentMovement
         )
         self.overlayView.draw(overlayViewExtraInformation)
     }
@@ -172,17 +177,17 @@ extension CameraViewController: HolisticTrackerDelegate {
 
     
     func holisticTracker(_ tracker: HolisticTracker!, didOutputFace faceLandmarks: [Landmark]!, timestamp time: CMTime) {
-        self.face = Face(faceLandmarks)
+        self.holistic.face = Face(faceLandmarks)
     }
 
     
     func holisticTracker(_ tracker: HolisticTracker!, didOutputLeftHand leftHandLandmarks: [Landmark]!, timestamp time: CMTime) {
-        self.leftHand = Hand(leftHandLandmarks)
+        self.holistic.leftHand = Hand(leftHandLandmarks)
     }
 
     
     func holisticTracker(_ tracker: HolisticTracker!, didOutputRightHand rightHandLandmarks: [Landmark]!, timestamp time: CMTime) {
-        self.rightHand = Hand(rightHandLandmarks)
+        self.holistic.rightHand = Hand(rightHandLandmarks)
     }
     
 }

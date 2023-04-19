@@ -8,31 +8,67 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CareYourEyes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="CareYourEyes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nGr-B9-t5a">
+                                <rect key="frame" x="0.0" y="103" width="393" height="478"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="movementTableViewCell" id="sYW-bo-iz0">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sYW-bo-iz0" id="6i0-BN-deA">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuG-fm-cqD">
-                                <rect key="frame" x="131.66666666666666" y="408.66666666666669" width="129.99999999999997" height="35"/>
+                                <rect key="frame" x="146.66666666666666" y="681" width="100" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="cLN-5L-Q69"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Open Camera"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Start">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
                                 <connections>
-                                    <segue destination="WOv-9S-H2D" kind="show" id="DO4-On-qqY"/>
+                                    <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5nH-sU-EGw"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fuG-fm-cqD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gas-6z-SoQ"/>
+                            <constraint firstItem="nGr-B9-t5a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qx0-HY-LDE"/>
                             <constraint firstItem="fuG-fm-cqD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lNI-oa-cxi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fuG-fm-cqD" secondAttribute="bottom" constant="100" id="mar-GN-hic"/>
+                            <constraint firstItem="fuG-fm-cqD" firstAttribute="top" secondItem="nGr-B9-t5a" secondAttribute="bottom" constant="100" id="rSh-bZ-6tN"/>
+                            <constraint firstItem="nGr-B9-t5a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ujA-6h-ma8"/>
+                            <constraint firstItem="nGr-B9-t5a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vlq-mU-wy6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vHg-pk-4A8"/>
+                    <connections>
+                        <outlet property="movementsTableView" destination="nGr-B9-t5a" id="E21-4M-D8g"/>
+                        <outlet property="startButton" destination="fuG-fm-cqD" id="e6O-Ky-kHc"/>
+                        <segue destination="WOv-9S-H2D" kind="show" identifier="initialToCameraSegue" id="alT-kU-w9H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

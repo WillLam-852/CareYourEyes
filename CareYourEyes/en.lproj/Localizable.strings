@@ -9,6 +9,7 @@
 // MARK: - Alert Title
 "error" = "Error";
 "permissionRequest" = "Permission Required";
+"selectMovement" = "Please Select Movement First";
 
 // MARK: - Alert Message
 "enablePermission" = "Please enable Camera Permission to use this function.";
@@ -17,3 +18,11 @@
 // MARK: - Alert Buttons
 "OK" = "OK";
 "settings" = "Settings";
+
+// MARK: - Button Names
+"start" = "Start";
+
+// MARK: - Movement Names
+"movement1" = "Movement 1";
+"movement2" = "Movement 2";
+"movement3" = "Movement 3";

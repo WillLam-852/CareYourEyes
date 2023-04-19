@@ -9,6 +9,7 @@
 // MARK: - Alert Title
 "error" = "錯誤";
 "permissionRequest" = "需要權限";
+"selectMovement" = "請先選擇動作";
 
 // MARK: - Alert Message
 "enablePermission" = "請啟用相機權限以使用此功能";
@@ -17,3 +18,11 @@
 // MARK: - Alert Buttons
 "OK" = "確定";
 "settings" = "設定";
+
+// MARK: - Button Names
+"start" = "開始";
+
+// MARK: - Movement Names
+"movement1" = "動作1";
+"movement2" = "動作2";
+"movement3" = "動作3";

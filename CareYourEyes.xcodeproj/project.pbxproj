@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D37503729E53D46003D6F34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37503629E53D46003D6F34 /* AppDelegate.swift */; };
 		0D37503929E53D46003D6F34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37503829E53D46003D6F34 /* SceneDelegate.swift */; };
-		0D37503B29E53D46003D6F34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37503A29E53D46003D6F34 /* ViewController.swift */; };
+		0D37503B29E53D46003D6F34 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37503A29E53D46003D6F34 /* InitialViewController.swift */; };
 		0D37503E29E53D46003D6F34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37503C29E53D46003D6F34 /* Main.storyboard */; };
 		0D37504029E53D47003D6F34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D37503F29E53D47003D6F34 /* Assets.xcassets */; };
 		0D37504329E53D47003D6F34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37504129E53D47003D6F34 /* LaunchScreen.storyboard */; };
@@ -31,6 +31,8 @@
 		0D3750D329E79CFB003D6F34 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750D229E79CFB003D6F34 /* Double.swift */; };
 		0D3750D529E79D2E003D6F34 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750D429E79D2E003D6F34 /* Axis.swift */; };
 		0D3750D729E7BC20003D6F34 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750D629E7BC20003D6F34 /* UIImage.swift */; };
+		0D43FDFE29EF82DE0028B7F9 /* MovementTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43FDFD29EF82DE0028B7F9 /* MovementTwo.swift */; };
+		0D43FE0029EF82E50028B7F9 /* MovementThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43FDFF29EF82E50028B7F9 /* MovementThree.swift */; };
 		0DB56CBD29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CBC29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift */; };
 		0DB56CC029E7C0DE00D36AD5 /* HandKeyLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CBF29E7C0DE00D36AD5 /* HandKeyLine.swift */; };
 		0DB56CC229E941CD00D36AD5 /* MovementAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC129E941CD00D36AD5 /* MovementAnalyzer.swift */; };
@@ -39,6 +41,12 @@
 		0DB56CC929E9432B00D36AD5 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC829E9432B00D36AD5 /* Side.swift */; };
 		0DB56CCB29E9435800D36AD5 /* FaceKeyPointName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CCA29E9435800D36AD5 /* FaceKeyPointName.swift */; };
 		0DB56CCD29E97A6100D36AD5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB56CCC29E97A6100D36AD5 /* Media.xcassets */; };
+		0DFCDE8E29E97DD800E49B60 /* AbstractMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE8D29E97DD800E49B60 /* AbstractMovement.swift */; };
+		0DFCDE9129E97E3700E49B60 /* Criteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9029E97E3700E49B60 /* Criteria.swift */; };
+		0DFCDE9329E97E7A00E49B60 /* MovementOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9229E97E7A00E49B60 /* MovementOne.swift */; };
+		0DFCDE9529E9803B00E49B60 /* HandKeyPointWithSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9429E9803B00E49B60 /* HandKeyPointWithSide.swift */; };
+		0DFCDE9829EA887600E49B60 /* Holistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9729EA887600E49B60 /* Holistic.swift */; };
+		0DFCDE9B29EA905A00E49B60 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9A29EA905A00E49B60 /* CustomError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,7 +67,7 @@
 		0D37503329E53D46003D6F34 /* CareYourEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareYourEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D37503629E53D46003D6F34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D37503829E53D46003D6F34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0D37503A29E53D46003D6F34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0D37503A29E53D46003D6F34 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		0D37503D29E53D46003D6F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D37503F29E53D47003D6F34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D37504229E53D47003D6F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,6 +99,8 @@
 		0D3750D229E79CFB003D6F34 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		0D3750D429E79D2E003D6F34 /* Axis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
 		0D3750D629E7BC20003D6F34 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		0D43FDFD29EF82DE0028B7F9 /* MovementTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementTwo.swift; sourceTree = "<group>"; };
+		0D43FDFF29EF82E50028B7F9 /* MovementThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementThree.swift; sourceTree = "<group>"; };
 		0DB56CBC29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewExtraInformation.swift; sourceTree = "<group>"; };
 		0DB56CBF29E7C0DE00D36AD5 /* HandKeyLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandKeyLine.swift; sourceTree = "<group>"; };
 		0DB56CC129E941CD00D36AD5 /* MovementAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementAnalyzer.swift; sourceTree = "<group>"; };
@@ -99,6 +109,12 @@
 		0DB56CC829E9432B00D36AD5 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 		0DB56CCA29E9435800D36AD5 /* FaceKeyPointName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceKeyPointName.swift; sourceTree = "<group>"; };
 		0DB56CCC29E97A6100D36AD5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		0DFCDE8D29E97DD800E49B60 /* AbstractMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractMovement.swift; sourceTree = "<group>"; };
+		0DFCDE9029E97E3700E49B60 /* Criteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criteria.swift; sourceTree = "<group>"; };
+		0DFCDE9229E97E7A00E49B60 /* MovementOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementOne.swift; sourceTree = "<group>"; };
+		0DFCDE9429E9803B00E49B60 /* HandKeyPointWithSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandKeyPointWithSide.swift; sourceTree = "<group>"; };
+		0DFCDE9729EA887600E49B60 /* Holistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holistic.swift; sourceTree = "<group>"; };
+		0DFCDE9A29EA905A00E49B60 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +153,7 @@
 				0D37505829E56363003D6F34 /* Models */,
 				0D37506029E567CC003D6F34 /* Extensions */,
 				0D37505229E562A9003D6F34 /* Frameworks */,
+				0DFCDE9929EA904F00E49B60 /* Error */,
 				0D37503629E53D46003D6F34 /* AppDelegate.swift */,
 				0D37503829E53D46003D6F34 /* SceneDelegate.swift */,
 				0D37505B29E56451003D6F34 /* Constant.swift */,
@@ -150,7 +167,7 @@
 		0D37504C29E561DB003D6F34 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0D37503A29E53D46003D6F34 /* ViewController.swift */,
+				0D37503A29E53D46003D6F34 /* InitialViewController.swift */,
 				0D37504A29E5609E003D6F34 /* CameraViewController.swift */,
 			);
 			path = Controllers;
@@ -180,9 +197,11 @@
 			isa = PBXGroup;
 			children = (
 				0D37505D29E56488003D6F34 /* Camera Feed */,
+				0DFCDE9629EA883E00E49B60 /* Holistic */,
 				0DB56CC329E9420900D36AD5 /* Face */,
 				0D3750C429E79A20003D6F34 /* Hand */,
 				0D3750CD29E79AA5003D6F34 /* Analyze */,
+				0DFCDE8F29E97DEC00E49B60 /* Movement */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				0D3750C529E79A34003D6F34 /* Hand.swift */,
+				0DFCDE9429E9803B00E49B60 /* HandKeyPointWithSide.swift */,
 				0D3750C729E79A5E003D6F34 /* HandKeyPoint.swift */,
 				0DB56CBF29E7C0DE00D36AD5 /* HandKeyLine.swift */,
 				0D3750C929E79A6F003D6F34 /* HandPartName.swift */,
@@ -247,6 +267,34 @@
 				0DB56CC829E9432B00D36AD5 /* Side.swift */,
 			);
 			path = Face;
+			sourceTree = "<group>";
+		};
+		0DFCDE8F29E97DEC00E49B60 /* Movement */ = {
+			isa = PBXGroup;
+			children = (
+				0DFCDE8D29E97DD800E49B60 /* AbstractMovement.swift */,
+				0DFCDE9229E97E7A00E49B60 /* MovementOne.swift */,
+				0D43FDFD29EF82DE0028B7F9 /* MovementTwo.swift */,
+				0D43FDFF29EF82E50028B7F9 /* MovementThree.swift */,
+				0DFCDE9029E97E3700E49B60 /* Criteria.swift */,
+			);
+			path = Movement;
+			sourceTree = "<group>";
+		};
+		0DFCDE9629EA883E00E49B60 /* Holistic */ = {
+			isa = PBXGroup;
+			children = (
+				0DFCDE9729EA887600E49B60 /* Holistic.swift */,
+			);
+			path = Holistic;
+			sourceTree = "<group>";
+		};
+		0DFCDE9929EA904F00E49B60 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				0DFCDE9A29EA905A00E49B60 /* CustomError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,28 +375,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D37505C29E56451003D6F34 /* Constant.swift in Sources */,
-				0D37503B29E53D46003D6F34 /* ViewController.swift in Sources */,
+				0D37503B29E53D46003D6F34 /* InitialViewController.swift in Sources */,
+				0DFCDE9829EA887600E49B60 /* Holistic.swift in Sources */,
 				0DB56CC929E9432B00D36AD5 /* Side.swift in Sources */,
 				0D3750D329E79CFB003D6F34 /* Double.swift in Sources */,
 				0D3750D529E79D2E003D6F34 /* Axis.swift in Sources */,
+				0D43FE0029EF82E50028B7F9 /* MovementThree.swift in Sources */,
+				0DFCDE9529E9803B00E49B60 /* HandKeyPointWithSide.swift in Sources */,
 				0DB56CC029E7C0DE00D36AD5 /* HandKeyLine.swift in Sources */,
 				0D37504B29E5609E003D6F34 /* CameraViewController.swift in Sources */,
 				0D3750C829E79A5E003D6F34 /* HandKeyPoint.swift in Sources */,
 				0D37506229E567E2003D6F34 /* AVCaptureVideoOrientation.swift in Sources */,
 				0DB56CC729E942C200D36AD5 /* FaceKeyPoint.swift in Sources */,
+				0DFCDE9B29EA905A00E49B60 /* CustomError.swift in Sources */,
 				0D37503729E53D46003D6F34 /* AppDelegate.swift in Sources */,
 				0DB56CC229E941CD00D36AD5 /* MovementAnalyzer.swift in Sources */,
 				0DB56CC529E9421900D36AD5 /* Face.swift in Sources */,
 				0D37503929E53D46003D6F34 /* SceneDelegate.swift in Sources */,
+				0D43FDFE29EF82DE0028B7F9 /* MovementTwo.swift in Sources */,
 				0D3750C629E79A34003D6F34 /* Hand.swift in Sources */,
+				0DFCDE9129E97E3700E49B60 /* Criteria.swift in Sources */,
 				0D3750CA29E79A6F003D6F34 /* HandPartName.swift in Sources */,
 				0D3750CC29E79A87003D6F34 /* HandKeyPointName.swift in Sources */,
 				0D37505A29E5637F003D6F34 /* CameraFeedManager.swift in Sources */,
+				0DFCDE8E29E97DD800E49B60 /* AbstractMovement.swift in Sources */,
 				0D37505129E56252003D6F34 /* OverlayView.swift in Sources */,
 				0D37505F29E564A1003D6F34 /* SessionSetupResult.swift in Sources */,
 				0DB56CBD29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift in Sources */,
 				0DB56CCB29E9435800D36AD5 /* FaceKeyPointName.swift in Sources */,
 				0D3750D729E7BC20003D6F34 /* UIImage.swift in Sources */,
+				0DFCDE9329E97E7A00E49B60 /* MovementOne.swift in Sources */,
 				0D3750D129E79ADE003D6F34 /* KeyPoint.swift in Sources */,
 				0D3750CF29E79ABA003D6F34 /* Point3D.swift in Sources */,
 			);

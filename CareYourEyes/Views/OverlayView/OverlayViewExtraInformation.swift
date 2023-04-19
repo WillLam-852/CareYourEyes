@@ -10,8 +10,7 @@ import UIKit
 struct OverlayViewExtraInformation {
     
     let image: UIImage
-    var face: Face? = nil
-    var leftHand: Hand? = nil
-    var rightHand: Hand? = nil
+    var holistic: Holistic
+    var movement: AbstractMovement
 
 }

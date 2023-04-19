@@ -7,28 +7,17 @@
 
 class MovementAnalyzer {
     
-    var face: Face? = nil
-    var leftHand: Hand? = nil
-    var rightHand: Hand? = nil
-    
-    public func importKeyPoints(_ face: Face, _ leftHand: Hand, _ rightHand: Hand) {
-        self.face = face
-        self.leftHand = leftHand
-        self.rightHand = rightHand
-    }
-    
-    public func movementOne() -> Bool {
-        guard let face = self.face,
-              let leftHand = self.leftHand,
-              let rightHand = self.rightHand else {
-            print("Face / leftHand / rightHand is not initialized")
-            return false
+    public func check(holistic: Holistic, movement: AbstractMovement) throws -> Bool {
+        var isFulfilled: Bool = true
+        for criteria in movement.criterias {
+            let pointA = try holistic.findKeyPoint(keyPoint: criteria.pointA)
+            let pointB = try holistic.findKeyPoint(keyPoint: criteria.pointB)
+            if !pointA.point!.isOverlapping(pointB.point!) {
+                isFulfilled = false
+                break
+            }
         }
-        let leftFacePoint = face.getKeyPoint(FaceKeyPoint(.midPointBetweenEyeAndNose, .left)).point!
-        let rightFacePoint = face.getKeyPoint(FaceKeyPoint(.midPointBetweenEyeAndNose, .right)).point!
-        let leftHandPoint = leftHand.getKeyPoint(HandKeyPoint(.index, .tip)).point!
-        let rightHandPoint = rightHand.getKeyPoint(HandKeyPoint(.index, .tip)).point!
-        return leftFacePoint.isOverlapping(leftHandPoint) && rightFacePoint.isOverlapping(rightHandPoint)
+        return isFulfilled
     }
     
 }

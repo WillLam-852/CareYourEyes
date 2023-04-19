@@ -5,6 +5,7 @@
 //  Created by Lam Wun Yin on 11/4/2023.
 //
 
+import os
 import UIKit
 
 /// Custom view to visualize the pose estimation result on top of the input image.
@@ -115,21 +116,40 @@ class OverlayView: UIImageView {
 
         self.imageSize = overlayViewExtraInformation.image.size
         overlayViewExtraInformation.image.draw(at: .zero)
-
-        if let leftHand = overlayViewExtraInformation.leftHand {
-            let strokes = self.createHandStrokes(from: leftHand)
-            self.drawHandDots(dots: strokes.dots)
-        }
         
-        if let rightHand = overlayViewExtraInformation.rightHand {
-            let strokes = self.createHandStrokes(from: rightHand)
-            self.drawHandDots(dots: strokes.dots)
+        overlayViewExtraInformation.movement.criterias.forEach {
+            do {
+                let pointA = try overlayViewExtraInformation.holistic.findKeyPoint(keyPoint: $0.pointA).point!
+                self.drawDots([pointA], Config.redDot)
+            } catch {
+                if #available(iOS 14.0, *) {
+                    os_log("\(error.localizedDescription)")
+                }
+            }
+            do {
+                let pointB = try overlayViewExtraInformation.holistic.findKeyPoint(keyPoint: $0.pointB).point!
+                self.drawDots([pointB], Config.blueDot)
+            } catch {
+                if #available(iOS 14.0, *) {
+                    os_log("\(error.localizedDescription)")
+                }
+            }
         }
 
-        if let face = overlayViewExtraInformation.face {
-            self.drawFaceDots(face: face, keyPointsNumbers: [193, 417])
+//        if let leftHand = overlayViewExtraInformation.holistic.leftHand {
+//            let strokes = self.createHandStrokes(from: leftHand)
+//            self.drawHandDots(dots: strokes.dots)
+//        }
+//
+//        if let rightHand = overlayViewExtraInformation.holistic.rightHand {
+//            let strokes = self.createHandStrokes(from: rightHand)
+//            self.drawHandDots(dots: strokes.dots)
+//        }
+//
+//        if let face = overlayViewExtraInformation.holistic.face {
+//            self.drawFaceDots(face: face, keyPointsNumbers: [193, 417])
 //            self.showFaceNumbers(landmarks: faceLandmarks)
-        }
+//        }
 
         guard let newImage = UIGraphicsGetImageFromCurrentImageContext() else { fatalError() }
         
