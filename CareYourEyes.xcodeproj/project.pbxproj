@@ -33,6 +33,7 @@
 		0D3750D729E7BC20003D6F34 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750D629E7BC20003D6F34 /* UIImage.swift */; };
 		0D43FDFE29EF82DE0028B7F9 /* MovementTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43FDFD29EF82DE0028B7F9 /* MovementTwo.swift */; };
 		0D43FE0029EF82E50028B7F9 /* MovementThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43FDFF29EF82E50028B7F9 /* MovementThree.swift */; };
+		0D43FE0229EF96B10028B7F9 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43FE0129EF96B10028B7F9 /* ProgressBarView.swift */; };
 		0DB56CBD29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CBC29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift */; };
 		0DB56CC029E7C0DE00D36AD5 /* HandKeyLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CBF29E7C0DE00D36AD5 /* HandKeyLine.swift */; };
 		0DB56CC229E941CD00D36AD5 /* MovementAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC129E941CD00D36AD5 /* MovementAnalyzer.swift */; };
@@ -101,6 +102,7 @@
 		0D3750D629E7BC20003D6F34 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0D43FDFD29EF82DE0028B7F9 /* MovementTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementTwo.swift; sourceTree = "<group>"; };
 		0D43FDFF29EF82E50028B7F9 /* MovementThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementThree.swift; sourceTree = "<group>"; };
+		0D43FE0129EF96B10028B7F9 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		0DB56CBC29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewExtraInformation.swift; sourceTree = "<group>"; };
 		0DB56CBF29E7C0DE00D36AD5 /* HandKeyLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandKeyLine.swift; sourceTree = "<group>"; };
 		0DB56CC129E941CD00D36AD5 /* MovementAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementAnalyzer.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				0D37503C29E53D46003D6F34 /* Main.storyboard */,
 				0D37504129E53D47003D6F34 /* LaunchScreen.storyboard */,
 				0DB56CBE29E7C0A100D36AD5 /* OverlayView */,
+				0D43FE0129EF96B10028B7F9 /* ProgressBarView.swift */,
 				0D37503F29E53D47003D6F34 /* Assets.xcassets */,
 			);
 			path = Views;
@@ -407,6 +410,7 @@
 				0DFCDE9329E97E7A00E49B60 /* MovementOne.swift in Sources */,
 				0D3750D129E79ADE003D6F34 /* KeyPoint.swift in Sources */,
 				0D3750CF29E79ABA003D6F34 /* Point3D.swift in Sources */,
+				0D43FE0229EF96B10028B7F9 /* ProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

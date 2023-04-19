@@ -44,7 +44,8 @@ public enum K {
     
     // MARK: - Threshold
     struct KeyPointAnalysis {
-        public static let overlappingDistance = 0.1
+        public static let overlappingDistance: Double = 0.1
+        public static let targetCount: Float = 100.0
     }
     
 }

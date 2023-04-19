@@ -13,6 +13,7 @@ class CameraViewController: UIViewController {
     
     @IBOutlet weak var overlayView: OverlayView!
     @IBOutlet weak var tickImageView: UIImageView!
+    @IBOutlet weak var progressBar: ProgressBarView!
     
     // MARK: - Tracker
     
@@ -37,6 +38,10 @@ class CameraViewController: UIViewController {
     // MARK: - Analyzer
     /// For analyzing movement
     private var movementAnalyzer = MovementAnalyzer()
+    /// Count for consecutive detection
+    private var currentCount: Float = 0.0
+    /// Target count for consecutive detection
+    private let targetCount: Float = K.KeyPointAnalysis.targetCount
     
     // MARK: - Movement
     /// Current movement
@@ -132,6 +137,23 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         do {
             let checkResult = try self.movementAnalyzer.check(holistic: self.holistic, movement: self.currentMovement)
             if checkResult {
+                self.currentCount += 1
+            } else {
+                self.currentCount = 0
+            }
+            let progress = Float(self.currentCount / self.targetCount)
+            self.progressBar.progress = progress
+            switch progress {
+            case ..<0.5:
+                self.progressBar.progressTintColor = .red
+            case 0.5..<0.9:
+                self.progressBar.progressTintColor = .yellow
+            case 0.9...:
+                self.progressBar.progressTintColor = .green
+            default:
+                self.progressBar.progressTintColor = .red
+            }
+            if progress >= 1.0 {
                 self.tickImageView.isHidden = false
             } else {
                 self.tickImageView.isHidden = true
