@@ -12,12 +12,12 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var movementsTableView: UITableView!
     @IBOutlet weak var startButton: UIButton!
     
-    let movements: [AbstractMovement] = [
+    let movements: [any AbstractMovement] = [
         MovementOne(),
         MovementTwo(),
         MovementThree()
     ]
-    var selectedMovement: AbstractMovement? = nil
+    var selectedIndexes: [Int] = []
     
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class InitialViewController: UIViewController {
     
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
-        if self.selectedMovement == nil {
+        if self.selectedIndexes.count == 0 {
             DispatchQueue.main.async {
                 let alertController = UIAlertController(
                     title: NSLocalizedString(K.Localization.selectMovement, comment: "Please Select Movement First"),
@@ -55,9 +55,18 @@ class InitialViewController: UIViewController {
             let deviceOrientation = self.view.window?.windowScene?.interfaceOrientation ?? .unknown
             if let cameraVC = segue.destination as? CameraViewController {
                 cameraVC.deviceOrientation = deviceOrientation
-                cameraVC.currentMovement = self.selectedMovement!
+                cameraVC.movementsList = self.filterMovementsByIndex(self.movements, self.selectedIndexes)
             }
         }
+    }
+    
+    
+    private func filterMovementsByIndex(_ movements: [any AbstractMovement], _ selectedIndexes: [Int]) -> [any AbstractMovement] {
+        var selectedMovements: [any AbstractMovement] = []
+        for index in selectedIndexes {
+            selectedMovements.append(movements[index])
+        }
+        return selectedMovements
     }
 
 }
@@ -69,14 +78,27 @@ extension InitialViewController: UITableViewDelegate, UITableViewDataSource {
         return movements.count
     }
     
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCell.movementTableViewCell)!
-        cell.textLabel?.text = movements[indexPath.row].name
+        cell.textLabel?.text = self.movements[indexPath.row].name
+        if self.selectedIndexes.contains(indexPath.row) {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedMovement = movements[indexPath.row]
-    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if !self.selectedIndexes.contains(indexPath.row) {
+            self.selectedIndexes.append(indexPath.row)
+            self.selectedIndexes.sort()
+        } else {
+            self.selectedIndexes.removeAll { $0 == indexPath.row }
+        }
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+        
 }

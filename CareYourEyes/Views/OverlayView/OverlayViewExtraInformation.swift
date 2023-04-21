@@ -11,6 +11,6 @@ struct OverlayViewExtraInformation {
     
     let image: UIImage
     var holistic: Holistic
-    var movement: AbstractMovement
+    var movement: any AbstractMovement
 
 }

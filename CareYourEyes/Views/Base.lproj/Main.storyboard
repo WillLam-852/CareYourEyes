@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nGr-B9-t5a">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nGr-B9-t5a">
                                 <rect key="frame" x="0.0" y="103" width="393" height="478"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -84,10 +84,35 @@
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="to1-pf-w8H" customClass="OverlayView" customModule="CareYourEyes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ud6-46-GB7">
+                                        <rect key="frame" x="0.0" y="649" width="393" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="countLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ku1-ZS-RFd">
+                                                <rect key="frame" x="30" y="24" width="333" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="1fQ-pa-xy5"/>
+                                            <constraint firstItem="ku1-ZS-RFd" firstAttribute="leading" secondItem="ud6-46-GB7" secondAttribute="leading" constant="30" id="2Wg-Le-SJn"/>
+                                            <constraint firstItem="ku1-ZS-RFd" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ud6-46-GB7" secondAttribute="trailing" constant="-30" id="73h-UD-FHG"/>
+                                            <constraint firstItem="ku1-ZS-RFd" firstAttribute="centerY" secondItem="ud6-46-GB7" secondAttribute="centerY" constant="-10" id="nV0-YZ-15G"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ud6-46-GB7" firstAttribute="leading" secondItem="to1-pf-w8H" secondAttribute="leading" id="70A-KH-p8N"/>
+                                    <constraint firstAttribute="trailing" secondItem="ud6-46-GB7" secondAttribute="trailing" id="EJM-m6-azj"/>
+                                    <constraint firstAttribute="bottom" secondItem="ud6-46-GB7" secondAttribute="bottom" id="nuB-tT-OIB"/>
+                                </constraints>
                             </view>
                             <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jdg-VI-2vS" customClass="ProgressBarView" customModule="CareYourEyes" customModuleProvider="target">
-                                <rect key="frame" x="30" y="103" width="333" height="25"/>
+                                <rect key="frame" x="30" y="113" width="333" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="Ghg-Xu-pEx"/>
                                     <constraint firstAttribute="height" constant="25" id="bR7-5X-n5D"/>
@@ -96,7 +121,7 @@
                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="m0T-ml-nuM">
-                                <rect key="frame" x="96.666666666666686" y="138" width="200" height="200"/>
+                                <rect key="frame" x="96.666666666666686" y="148" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="9TC-q0-XV2"/>
                                     <constraint firstAttribute="width" secondItem="m0T-ml-nuM" secondAttribute="height" multiplier="1:1" id="bI9-Ye-dyg"/>
@@ -108,7 +133,7 @@
                         <constraints>
                             <constraint firstItem="to1-pf-w8H" firstAttribute="top" secondItem="WsL-lh-lPy" secondAttribute="top" id="B6p-aw-58B"/>
                             <constraint firstItem="Jdg-VI-2vS" firstAttribute="leading" secondItem="WsL-lh-lPy" secondAttribute="leading" constant="30" id="GVR-ba-gnn"/>
-                            <constraint firstItem="Jdg-VI-2vS" firstAttribute="top" secondItem="WsL-lh-lPy" secondAttribute="top" id="KuU-ph-1de"/>
+                            <constraint firstItem="Jdg-VI-2vS" firstAttribute="top" secondItem="WsL-lh-lPy" secondAttribute="top" constant="10" id="KuU-ph-1de"/>
                             <constraint firstItem="WsL-lh-lPy" firstAttribute="trailing" secondItem="Jdg-VI-2vS" secondAttribute="trailing" constant="30" id="OKI-aH-tIy"/>
                             <constraint firstItem="m0T-ml-nuM" firstAttribute="centerX" secondItem="dwj-lE-Meu" secondAttribute="centerX" id="QS7-eX-Je4"/>
                             <constraint firstItem="m0T-ml-nuM" firstAttribute="top" secondItem="Jdg-VI-2vS" secondAttribute="bottom" constant="10" id="UGD-rO-Rry"/>
@@ -119,6 +144,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nmK-ZQ-kXV"/>
                     <connections>
+                        <outlet property="countLabel" destination="ku1-ZS-RFd" id="B5C-9o-o04"/>
                         <outlet property="overlayView" destination="to1-pf-w8H" id="KwX-et-yRL"/>
                         <outlet property="progressBar" destination="Jdg-VI-2vS" id="Q6O-g9-Wzw"/>
                         <outlet property="tickImageView" destination="m0T-ml-nuM" id="rFf-JI-Hpe"/>

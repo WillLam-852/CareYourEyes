@@ -42,6 +42,7 @@
 		0DB56CC929E9432B00D36AD5 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC829E9432B00D36AD5 /* Side.swift */; };
 		0DB56CCB29E9435800D36AD5 /* FaceKeyPointName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CCA29E9435800D36AD5 /* FaceKeyPointName.swift */; };
 		0DB56CCD29E97A6100D36AD5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB56CCC29E97A6100D36AD5 /* Media.xcassets */; };
+		0DDB049629F223BE0048449D /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB049529F223BE0048449D /* CountdownTimer.swift */; };
 		0DFCDE8E29E97DD800E49B60 /* AbstractMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE8D29E97DD800E49B60 /* AbstractMovement.swift */; };
 		0DFCDE9129E97E3700E49B60 /* Criteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9029E97E3700E49B60 /* Criteria.swift */; };
 		0DFCDE9329E97E7A00E49B60 /* MovementOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9229E97E7A00E49B60 /* MovementOne.swift */; };
@@ -111,6 +112,7 @@
 		0DB56CC829E9432B00D36AD5 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 		0DB56CCA29E9435800D36AD5 /* FaceKeyPointName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceKeyPointName.swift; sourceTree = "<group>"; };
 		0DB56CCC29E97A6100D36AD5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		0DDB049529F223BE0048449D /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
 		0DFCDE8D29E97DD800E49B60 /* AbstractMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractMovement.swift; sourceTree = "<group>"; };
 		0DFCDE9029E97E3700E49B60 /* Criteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criteria.swift; sourceTree = "<group>"; };
 		0DFCDE9229E97E7A00E49B60 /* MovementOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementOne.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				0D3750C429E79A20003D6F34 /* Hand */,
 				0D3750CD29E79AA5003D6F34 /* Analyze */,
 				0DFCDE8F29E97DEC00E49B60 /* Movement */,
+				0DDB049429F223A00048449D /* Timer */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +273,14 @@
 				0DB56CC829E9432B00D36AD5 /* Side.swift */,
 			);
 			path = Face;
+			sourceTree = "<group>";
+		};
+		0DDB049429F223A00048449D /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				0DDB049529F223BE0048449D /* CountdownTimer.swift */,
+			);
+			path = Timer;
 			sourceTree = "<group>";
 		};
 		0DFCDE8F29E97DEC00E49B60 /* Movement */ = {
@@ -387,6 +398,7 @@
 				0DFCDE9529E9803B00E49B60 /* HandKeyPointWithSide.swift in Sources */,
 				0DB56CC029E7C0DE00D36AD5 /* HandKeyLine.swift in Sources */,
 				0D37504B29E5609E003D6F34 /* CameraViewController.swift in Sources */,
+				0DDB049629F223BE0048449D /* CountdownTimer.swift in Sources */,
 				0D3750C829E79A5E003D6F34 /* HandKeyPoint.swift in Sources */,
 				0D37506229E567E2003D6F34 /* AVCaptureVideoOrientation.swift in Sources */,
 				0DB56CC729E942C200D36AD5 /* FaceKeyPoint.swift in Sources */,
@@ -591,7 +603,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = lam.will.CareYourEyes;
+				PRODUCT_BUNDLE_IDENTIFIER = lam.will.CareYourEyes2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -619,7 +631,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = lam.will.CareYourEyes;
+				PRODUCT_BUNDLE_IDENTIFIER = lam.will.CareYourEyes2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

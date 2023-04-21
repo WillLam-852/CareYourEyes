@@ -14,6 +14,7 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var overlayView: OverlayView!
     @IBOutlet weak var tickImageView: UIImageView!
     @IBOutlet weak var progressBar: ProgressBarView!
+    @IBOutlet weak var countLabel: UILabel!
     
     // MARK: - Tracker
     
@@ -23,10 +24,6 @@ class CameraViewController: UIViewController {
     
     /// Handle the camera pipeline.
     private let cameraFeedManager = CameraFeedManager()
-    /// Serial queue to control all tasks related to the AI model.
-    private let AIModelQueue = DispatchQueue(label: K.DispatchQueueLabel.AIModelQueue)
-    /// Flag to make sure there's only one frame processed at each moment.
-    private var poseModelIsRunning = false
     /// Orientation of the device
     var deviceOrientation: UIInterfaceOrientation = .unknown
     
@@ -38,20 +35,36 @@ class CameraViewController: UIViewController {
     // MARK: - Analyzer
     /// For analyzing movement
     private var movementAnalyzer = MovementAnalyzer()
-    /// Count for consecutive detection
-    private var currentCount: Float = 0.0
+    /// Current count for consecutive detection
+    private var currentDetectionCount: Float = 0.0
     /// Target count for consecutive detection
-    private let targetCount: Float = K.KeyPointAnalysis.targetCount
+    private let targetDetectionCount: Float = K.KeyPointAnalysis.targetDetectionCount
+    /// Current count for this movement
+    private var currentMovementCount: Int = 0
+    /// Target count for this movement
+    private let targetMovementCount: Int = K.KeyPointAnalysis.targetMovementCount
+
     
     // MARK: - Movement
+    /// Movement list
+    var movementsList: [any AbstractMovement] = []
     /// Current movement
-    var currentMovement: AbstractMovement = MovementOne()
+    var currentMovement: (any AbstractMovement)?
+    /// Current movement index
+    var currentMovementIndex: Int = 0
     
+    // MARK: - CountdownTimer (for dots disappearance)
+    private var faceCountdownTimer = CountdownTimer(totalTime: 0.3)
+    private var leftHandCountdownTimer = CountdownTimer(totalTime: 0.3)
+    private var rightHandCountdownTimer = CountdownTimer(totalTime: 0.3)
     
     // MARK: - View Handling Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.currentMovement = self.movementsList[self.currentMovementIndex]
+        self.countLabel.text = "\(self.currentMovementCount) / \(self.targetMovementCount)"
 
         self.cameraFeedManager.authorizeCamera()
         self.cameraFeedManager.configureSession(interfaceOrientation: deviceOrientation, sampleBufferDelegate: self)
@@ -113,6 +126,11 @@ class CameraViewController: UIViewController {
         }
     }
 
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.cameraFeedManager.stopRunning()
+    }
 
 }
 
@@ -128,20 +146,22 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             return
         }
         CVPixelBufferLockBaseAddress(pixelBuffer, CVPixelBufferLockFlags.readOnly)
+        
         // Show the real-time video thread
-        DispatchQueue.main.async {
-            let cameraImage = UIImage(ciImage: CIImage(cvPixelBuffer: pixelBuffer))
-            self.drawImage(image: cameraImage, movement: self.currentMovement)
-        }
+        let cameraImage = UIImage(ciImage: CIImage(cvPixelBuffer: pixelBuffer))
+        self.drawImage(image: cameraImage, holistic: self.holistic, movement: self.currentMovement!)
         
         do {
-            let checkResult = try self.movementAnalyzer.check(holistic: self.holistic, movement: self.currentMovement)
+            let checkResult = try self.movementAnalyzer.check(holistic: self.holistic, movement: self.currentMovement!)
             if checkResult {
-                self.currentCount += 1
+                self.currentDetectionCount += 1
             } else {
-                self.currentCount = 0
+                if self.currentDetectionCount >= self.targetDetectionCount {
+                    self.currentMovementCount += 1
+                }
+                self.currentDetectionCount = 0
             }
-            let progress = Float(self.currentCount / self.targetCount)
+            let progress = Float(self.currentDetectionCount / self.targetDetectionCount)
             self.progressBar.progress = progress
             switch progress {
             case ..<0.5:
@@ -158,6 +178,18 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             } else {
                 self.tickImageView.isHidden = true
             }
+            if self.currentMovementCount >= self.targetMovementCount {
+                self.currentMovementIndex += 1
+                if self.currentMovementIndex >= self.movementsList.count {
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                } else {
+                    self.currentMovement = self.movementsList[self.currentMovementIndex]
+                    self.currentMovementCount = 0
+                }
+            }
+            self.countLabel.text = "\(self.currentMovementCount) / \(self.targetMovementCount)"
         } catch {
             if #available(iOS 14.0, *) {
                 os_log("\(error.localizedDescription)")
@@ -170,13 +202,15 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     /// Draw keypoints in the image
-    func drawImage(image: UIImage, movement: AbstractMovement) {
+    func drawImage(image: UIImage, holistic: Holistic, movement: any AbstractMovement) {
         let overlayViewExtraInformation = OverlayViewExtraInformation(
             image: image,
-            holistic: self.holistic,
-            movement: self.currentMovement
+            holistic: holistic,
+            movement: movement
         )
-        self.overlayView.draw(overlayViewExtraInformation)
+        DispatchQueue.main.async {
+            self.overlayView.draw(overlayViewExtraInformation)
+        }
     }
 
 }
@@ -200,16 +234,37 @@ extension CameraViewController: HolisticTrackerDelegate {
     
     func holisticTracker(_ tracker: HolisticTracker!, didOutputFace faceLandmarks: [Landmark]!, timestamp time: CMTime) {
         self.holistic.face = Face(faceLandmarks)
+        DispatchQueue.main.async {
+            self.faceCountdownTimer.start(
+                onCompletion:  {
+                    self.holistic.face = nil
+                }
+            )
+        }
     }
 
     
     func holisticTracker(_ tracker: HolisticTracker!, didOutputLeftHand leftHandLandmarks: [Landmark]!, timestamp time: CMTime) {
         self.holistic.leftHand = Hand(leftHandLandmarks)
+        DispatchQueue.main.async {
+            self.leftHandCountdownTimer.start(
+                onCompletion:  {
+                    self.holistic.leftHand = nil
+                }
+            )
+        }
     }
 
     
     func holisticTracker(_ tracker: HolisticTracker!, didOutputRightHand rightHandLandmarks: [Landmark]!, timestamp time: CMTime) {
         self.holistic.rightHand = Hand(rightHandLandmarks)
+        DispatchQueue.main.async {
+            self.rightHandCountdownTimer.start(
+                onCompletion:  {
+                    self.holistic.rightHand = nil
+                }
+            )
+        }
     }
     
 }
