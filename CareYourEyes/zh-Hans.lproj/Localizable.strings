@@ -6,10 +6,13 @@
   
 */
 
+// MARK: - App Title
+"appTitle" = "AcuRelALx";
+
 // MARK: - Alert Title
 "error" = "错误";
 "permissionRequest" = "需要权限";
-"selectMovement" = "请先选择动作";
+"selectEyeExercise" = "请先选择护眼操动作";
 
 // MARK: - Alert Message
 "enablePermission" = "请启用相机权限以使用此功能";
@@ -22,7 +25,18 @@
 // MARK: - Button Names
 "start" = "开始";
 
-// MARK: - Movement Names
-"movement1" = "动作1";
-"movement2" = "动作2";
-"movement3" = "动作3";
+// MARK: - eyeExercise Titles
+"eyeExercise1Title" = "按揉攒竹穴";
+"eyeExercise2Title" = "挤按睛明穴";
+"eyeExercise3Title" = "揉四白穴";
+
+// MARK: - eyeExercise Descriptions
+"eyeExercise1Description" = "将双手的大拇指放置在两眉头的凹陷处，其余四指的指尖自然地抵在前额上，随着音乐口令拇指按揉画圈四个八拍。";
+"eyeExercise2Description" = "将双手食指轻按在鼻骨两侧，靠近眼内角处，其余四指自然放松、握起，呈空心拳状，食指有节奏地上下按压穴位四个八拍";
+"eyeExercise3Description" = "将两手食指和中指并拢，中指第一指关节对准鼻翼水平，轻按在鼻翼两侧，随后放下中指，与其余三指一起自然放松、握起，呈空心拳状，食指指尖所在的凹陷位置就是四白穴。食指有节奏地按揉穴位四个八拍";
+
+// MARK: - Result
+"result" = "结果";
+"time" = "时间";
+"eyeExercise" = "护眼操动作";
+"times" = "次";

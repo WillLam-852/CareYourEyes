@@ -117,7 +117,7 @@ class OverlayView: UIImageView {
         self.imageSize = overlayViewExtraInformation.image.size
         overlayViewExtraInformation.image.draw(at: .zero)
         
-        overlayViewExtraInformation.movement.criterias.forEach {
+        overlayViewExtraInformation.eyeExercise.criterias.forEach {
             do {
                 let pointA = try overlayViewExtraInformation.holistic.findKeyPoint(keyPoint: $0.pointA).point!
                 self.drawDots([pointA], Config.redDot)

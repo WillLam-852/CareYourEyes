@@ -33,44 +33,55 @@ class CameraViewController: UIViewController {
     private var holistic = Holistic()
     
     // MARK: - Analyzer
-    /// For analyzing movement
-    private var movementAnalyzer = MovementAnalyzer()
+    /// For analyzing eye exercises
+    private var eyeExerciseAnalyzer = EyeExerciseAnalyzer()
     /// Current count for consecutive detection
     private var currentDetectionCount: Float = 0.0
     /// Target count for consecutive detection
     private let targetDetectionCount: Float = K.KeyPointAnalysis.targetDetectionCount
-    /// Current count for this movement
-    private var currentMovementCount: Int = 0
-    /// Target count for this movement
-    private let targetMovementCount: Int = K.KeyPointAnalysis.targetMovementCount
+    /// Current count for this eye exercise
+    private var currentEyeExerciseCount: Int = 0
+    /// Target count for this eye exercise
+    private let targetEyeExerciseCount: Int = K.KeyPointAnalysis.targetEyeExerciseCount
+    /// Current dection changing count
+    private var currentDetectionChangingCount: Int = 0
+    /// Detection Changing Threshold
+    private let detectionChangingThreshold: Int = K.KeyPointAnalysis.detectionChangingThreshold
 
-    
-    // MARK: - Movement
-    /// Movement list
-    var movementsList: [any AbstractMovement] = []
-    /// Current movement
-    var currentMovement: (any AbstractMovement)?
-    /// Current movement index
-    var currentMovementIndex: Int = 0
+    // MARK: - Eye Exercise
+    /// Eye exercise list
+    var eyeExercisesList: [any AbstractEyeExercise] = []
+    /// Current eye exercise
+    var currentEyeExercise: (any AbstractEyeExercise)?
+    /// Current eye exercise index
+    var currentEyeExerciseIndex: Int = 0
     
     // MARK: - CountdownTimer (for dots disappearance)
     private var faceCountdownTimer = CountdownTimer(totalTime: 0.3)
     private var leftHandCountdownTimer = CountdownTimer(totalTime: 0.3)
     private var rightHandCountdownTimer = CountdownTimer(totalTime: 0.3)
     
+    // MARK: - Time Count
+    private var startTime: Date? = nil
+    private var endTime: Date? = nil
+
+    
     // MARK: - View Handling Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.currentMovement = self.movementsList[self.currentMovementIndex]
-        self.countLabel.text = "\(self.currentMovementCount) / \(self.targetMovementCount)"
+        self.currentEyeExercise = self.eyeExercisesList[self.currentEyeExerciseIndex]
+        self.navigationItem.title = self.currentEyeExercise!.name
+        self.countLabel.text = "\(self.currentEyeExerciseCount) / \(self.targetEyeExerciseCount)"
 
         self.cameraFeedManager.authorizeCamera()
         self.cameraFeedManager.configureSession(interfaceOrientation: deviceOrientation, sampleBufferDelegate: self)
         
         self.holisticTracker!.delegate = self
         self.holisticTracker!.startGraph()
+        
+        self.startTime = Date()
     }
     
 
@@ -131,6 +142,23 @@ class CameraViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.cameraFeedManager.stopRunning()
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.StoryboardSegue.cameraToResultSegue {
+            // Tell the camera view which orientation currently is
+            if let resultVC = segue.destination as? ResultViewController {
+                resultVC.time = self.endTime!.timeIntervalSince(self.startTime!)
+                
+                var resultText: String = ""
+                for eyeExercise in eyeExercisesList {
+                    resultText += "\(eyeExercise.name)\n"
+                    resultText += "                                         \(K.KeyPointAnalysis.targetEyeExerciseCount) times\n\n"
+                }
+                resultVC.result = resultText
+            }
+        }
+    }
 
 }
 
@@ -149,47 +177,66 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         // Show the real-time video thread
         let cameraImage = UIImage(ciImage: CIImage(cvPixelBuffer: pixelBuffer))
-        self.drawImage(image: cameraImage, holistic: self.holistic, movement: self.currentMovement!)
+        self.drawImage(image: cameraImage, holistic: self.holistic, eyeExercise: self.currentEyeExercise!)
         
         do {
-            let checkResult = try self.movementAnalyzer.check(holistic: self.holistic, movement: self.currentMovement!)
+            let checkResult = try self.eyeExerciseAnalyzer.check(holistic: self.holistic, eyeExercise: self.currentEyeExercise!)
             if checkResult {
                 self.currentDetectionCount += 1
+                // Reset changing count to 0
+                self.currentDetectionChangingCount = 0
             } else {
+                // Reset detection count to 0 for a new exercise count
                 if self.currentDetectionCount >= self.targetDetectionCount {
-                    self.currentMovementCount += 1
+                    self.currentEyeExerciseCount += 1
+                    self.currentDetectionCount = 0
                 }
-                self.currentDetectionCount = 0
+                
+                // Increase changing count by 1
+                self.currentDetectionChangingCount += 1
+                // If changing count is larger than or equal to threshold, reset changing count to 0
+                if self.currentDetectionChangingCount >= self.detectionChangingThreshold {
+                    self.currentDetectionChangingCount = 0
+                    self.currentDetectionCount = 0
+                }
             }
             let progress = Float(self.currentDetectionCount / self.targetDetectionCount)
-            self.progressBar.progress = progress
-            switch progress {
-            case ..<0.5:
-                self.progressBar.progressTintColor = .red
-            case 0.5..<0.9:
-                self.progressBar.progressTintColor = .yellow
-            case 0.9...:
-                self.progressBar.progressTintColor = .green
-            default:
-                self.progressBar.progressTintColor = .red
-            }
-            if progress >= 1.0 {
-                self.tickImageView.isHidden = false
-            } else {
-                self.tickImageView.isHidden = true
-            }
-            if self.currentMovementCount >= self.targetMovementCount {
-                self.currentMovementIndex += 1
-                if self.currentMovementIndex >= self.movementsList.count {
-                    DispatchQueue.main.async {
-                        self.navigationController?.popViewController(animated: true)
-                    }
+            DispatchQueue.main.async {
+                self.progressBar.progress = progress
+                switch progress {
+                case ..<0.5:
+                    self.progressBar.progressTintColor = .red
+                case 0.5..<0.9:
+                    self.progressBar.progressTintColor = .yellow
+                case 0.9...:
+                    self.progressBar.progressTintColor = .green
+                default:
+                    self.progressBar.progressTintColor = .red
+                }
+                if progress == 1.0 {
+                    AudioServicesPlaySystemSound(1054)
+                } else if progress > 1.0 {
+                    self.tickImageView.isHidden = false
                 } else {
-                    self.currentMovement = self.movementsList[self.currentMovementIndex]
-                    self.currentMovementCount = 0
+                    self.tickImageView.isHidden = true
                 }
             }
-            self.countLabel.text = "\(self.currentMovementCount) / \(self.targetMovementCount)"
+            if self.currentEyeExerciseCount >= self.targetEyeExerciseCount {
+                self.currentEyeExerciseIndex += 1
+                if self.currentEyeExerciseIndex >= self.eyeExercisesList.count {
+                    self.endTime = Date()
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: K.StoryboardSegue.cameraToResultSegue, sender: self)
+                    }
+                } else {
+                    self.currentEyeExercise = self.eyeExercisesList[self.currentEyeExerciseIndex]
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = self.currentEyeExercise!.name
+                    }
+                    self.currentEyeExerciseCount = 0
+                }
+            }
+            self.countLabel.text = "\(self.currentEyeExerciseCount) / \(self.targetEyeExerciseCount)"
         } catch {
             if #available(iOS 14.0, *) {
                 os_log("\(error.localizedDescription)")
@@ -202,11 +249,11 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     /// Draw keypoints in the image
-    func drawImage(image: UIImage, holistic: Holistic, movement: any AbstractMovement) {
+    func drawImage(image: UIImage, holistic: Holistic, eyeExercise: any AbstractEyeExercise) {
         let overlayViewExtraInformation = OverlayViewExtraInformation(
             image: image,
             holistic: holistic,
-            movement: movement
+            eyeExercise: eyeExercise
         )
         DispatchQueue.main.async {
             self.overlayView.draw(overlayViewExtraInformation)

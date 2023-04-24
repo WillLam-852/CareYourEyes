@@ -9,30 +9,33 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
-    @IBOutlet weak var movementsTableView: UITableView!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var eyeExercisesTabelView: UITableView!
+    @IBOutlet weak var startButton: UIBarButtonItem!
     
-    let movements: [any AbstractMovement] = [
-        MovementOne(),
-        MovementTwo(),
-        MovementThree()
+    let eyeExercises: [any AbstractEyeExercise] = [
+        EyeExerciseOne(),
+        EyeExerciseTwo(),
+        EyeExerciseThree()
     ]
     var selectedIndexes: [Int] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.movementsTableView.delegate = self
-        self.movementsTableView.dataSource = self
-        self.startButton.setTitle(NSLocalizedString(K.Localization.start, comment: "Start"), for: .normal)
+        self.navigationItem.title = NSLocalizedString(K.Localization.appTitle, comment: "App Title")
+        self.startButton.title = NSLocalizedString(K.Localization.start, comment: "Start")
+        
+        self.eyeExercisesTabelView.register(UINib(nibName: K.NIBName.SelectEyeExercisesTableViewCell, bundle: nil), forCellReuseIdentifier: K.TableViewCell.selectEyeExercisesTableViewCell)
+        self.eyeExercisesTabelView.delegate = self
+        self.eyeExercisesTabelView.dataSource = self
     }
     
     
-    @IBAction func startButtonPressed(_ sender: UIButton) {
+    @IBAction func startButtonPressed(_ sender: UIBarButtonItem) {
         if self.selectedIndexes.count == 0 {
             DispatchQueue.main.async {
                 let alertController = UIAlertController(
-                    title: NSLocalizedString(K.Localization.selectMovement, comment: "Please Select Movement First"),
+                    title: NSLocalizedString(K.Localization.selectEyeExercise, comment: "Please Select Eye Exercise First"),
                     message: nil,
                     preferredStyle: .alert
                 )
@@ -55,18 +58,18 @@ class InitialViewController: UIViewController {
             let deviceOrientation = self.view.window?.windowScene?.interfaceOrientation ?? .unknown
             if let cameraVC = segue.destination as? CameraViewController {
                 cameraVC.deviceOrientation = deviceOrientation
-                cameraVC.movementsList = self.filterMovementsByIndex(self.movements, self.selectedIndexes)
+                cameraVC.eyeExercisesList = self.filterEyeExercisesByIndex(self.eyeExercises, self.selectedIndexes)
             }
         }
     }
     
     
-    private func filterMovementsByIndex(_ movements: [any AbstractMovement], _ selectedIndexes: [Int]) -> [any AbstractMovement] {
-        var selectedMovements: [any AbstractMovement] = []
+    private func filterEyeExercisesByIndex(_ eyeExercises: [any AbstractEyeExercise], _ selectedIndexes: [Int]) -> [any AbstractEyeExercise] {
+        var selectedEyeExercises: [any AbstractEyeExercise] = []
         for index in selectedIndexes {
-            selectedMovements.append(movements[index])
+            selectedEyeExercises.append(eyeExercises[index])
         }
-        return selectedMovements
+        return selectedEyeExercises
     }
 
 }
@@ -75,19 +78,30 @@ class InitialViewController: UIViewController {
 extension InitialViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movements.count
+        return eyeExercises.count
     }
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCell.movementTableViewCell)!
-        cell.textLabel?.text = self.movements[indexPath.row].name
-        if self.selectedIndexes.contains(indexPath.row) {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
+        if let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCell.selectEyeExercisesTableViewCell) as? SelectEyeExercisesTableViewCell {
+            cell.eyeExerciseImageView.image = self.eyeExercises[indexPath.row].image
+            cell.titleLabel.text = self.eyeExercises[indexPath.row].name
+            cell.descriptionLabel.text = self.eyeExercises[indexPath.row].description
+            if self.selectedIndexes.contains(indexPath.row) {
+                cell.cellBackgroundView.backgroundColor = .systemGray.withAlphaComponent(0.3)
+                cell.tickImageView.isHidden = false
+            } else {
+                cell.cellBackgroundView.backgroundColor = .systemBackground
+                cell.tickImageView.isHidden = true
+            }
+            return cell
         }
-        return cell
+        return UITableViewCell()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 350
     }
     
     
@@ -98,7 +112,7 @@ extension InitialViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             self.selectedIndexes.removeAll { $0 == indexPath.row }
         }
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+        tableView.reloadData()
     }
         
 }

@@ -6,10 +6,13 @@
   
 */
 
+// MARK: - App Title
+"appTitle" = "AcuRelALx";
+
 // MARK: - Alert Title
 "error" = "Error";
 "permissionRequest" = "Permission Required";
-"selectMovement" = "Please Select Movement First";
+"selectEyeExercise" = "Please Select Eye Exercise First";
 
 // MARK: - Alert Message
 "enablePermission" = "Please enable Camera Permission to use this function.";
@@ -22,7 +25,18 @@
 // MARK: - Button Names
 "start" = "Start";
 
-// MARK: - Movement Names
-"movement1" = "Movement 1";
-"movement2" = "Movement 2";
-"movement3" = "Movement 3";
+// MARK: - Eye Exercise Titles
+"eyeExercise1Title" = "Massaging the Zan Zhu Acupoint";
+"eyeExercise2Title" = "Squeeze and Press Jingming Acupoints";
+"eyeExercise3Title" = "Rubbing Sibai Acupoints";
+
+// MARK: - Eye Exercise Descriptions
+"eyeExercise1Description" = "Place the thumbs of both hands on the depressions between the eyebrows, with the tips of the other four fingers naturally touching the forehead. Follow the music and rub the thumbs in a circular motion for four sets of eight beats.";
+"eyeExercise2Description" = "Place the index fingers lightly on both sides of the nose bone near the inner corners of the eyes, while keeping the other four fingers relaxed and curled into a hollow fist. Press the acupoints rhythmically with the index fingers for four beats in each set, for a total of eight sets.";
+"eyeExercise3Description" = "Place the index and middle fingers of both hands together, aligning the first joint of the middle finger with the nostrils. Gently press on both sides of the nostrils with the middle fingers, then release the middle fingers and let the remaining three fingers relax and curl into a hollow fist. The depression where the index finger is located is the location of the Sibai acupoint. Rub the acupoint in a rhythmic motion with the index finger for four sets of eight beats.";
+
+// MARK: - Result
+"result" = "Result";
+"time" = "Time";
+"eyeExercises" = "Eye Exercises";
+"times" = "times";
