@@ -1,0 +1,42 @@
+/*
+  Localizable.strings
+  CareYourEyes
+
+  Created by Lam Wun Yin on 12/4/2023.
+  
+*/
+
+// MARK: - App Title
+"appTitle" = "AcuRelALx";
+
+// MARK: - Alert Title
+"error" = "錯誤";
+"permissionRequest" = "需要權限";
+"selectEyeExercise" = "請先選擇護眼操動作";
+
+// MARK: - Alert Message
+"enablePermission" = "請啟用相機權限以使用此功能";
+"unableCaptureMedia" = "無法啓用相機";
+
+// MARK: - Alert Buttons
+"OK" = "確定";
+"settings" = "設定";
+
+// MARK: - Button Names
+"start" = "開始";
+
+// MARK: - eyeExercise Titles
+"eyeExercise1Title" = "按揉攢竹穴";
+"eyeExercise2Title" = "擠按睛明穴";
+"eyeExercise3Title" = "揉四白穴";
+
+// MARK: - eyeExercise Descriptions
+"eyeExercise1Description" = "將雙手的大拇指放置在兩眉頭的凹陷處，其餘四指的指尖自然地抵在前額上，隨著音樂口令拇指按揉畫圈四個八拍。";
+"eyeExercise2Description" = "將雙手食指輕按在鼻骨兩側，靠近眼內角處，其餘四指自然放鬆、握起，呈空心拳狀，食指有節奏地上下按壓穴位四個八拍";
+"eyeExercise3Description" = "將兩手食指和中指併攏，中指第一指關節對準鼻翼水平，輕按在鼻翼兩側，隨後放下中指，與其餘三指一起自然放鬆、握起，呈空心拳狀，食指指尖所在的凹陷位置就是四白穴。食指有節奏地按揉穴位四個八拍";
+
+// MARK: - Result
+"result" = "結果";
+"time" = "時間";
+"eyeExercise" = "護眼操動作";
+"times" = "次";

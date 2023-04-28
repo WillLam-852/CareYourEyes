@@ -1,0 +1,5 @@
+framework module HolisticTracker {
+  umbrella header "HolisticTracker.h"
+  export *
+  module * { export * }
+}

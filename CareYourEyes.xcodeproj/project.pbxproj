@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D03B5FD29F6475A003B0D06 /* SelectEyeExercisesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D03B5FB29F6475A003B0D06 /* SelectEyeExercisesTableViewCell.swift */; };
+		0D03B5FE29F6475A003B0D06 /* SelectEyeExercisesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D03B5FC29F6475A003B0D06 /* SelectEyeExercisesTableViewCell.xib */; };
+		0D37503729E53D46003D6F34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37503629E53D46003D6F34 /* AppDelegate.swift */; };
+		0D37503929E53D46003D6F34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37503829E53D46003D6F34 /* SceneDelegate.swift */; };
+		0D37503B29E53D46003D6F34 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37503A29E53D46003D6F34 /* InitialViewController.swift */; };
+		0D37503E29E53D46003D6F34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37503C29E53D46003D6F34 /* Main.storyboard */; };
+		0D37504029E53D47003D6F34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D37503F29E53D47003D6F34 /* Assets.xcassets */; };
+		0D37504329E53D47003D6F34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37504129E53D47003D6F34 /* LaunchScreen.storyboard */; };
+		0D37504B29E5609E003D6F34 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37504A29E5609E003D6F34 /* CameraViewController.swift */; };
+		0D37505129E56252003D6F34 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37505029E56252003D6F34 /* OverlayView.swift */; };
+		0D37505A29E5637F003D6F34 /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37505929E5637F003D6F34 /* CameraFeedManager.swift */; };
+		0D37505C29E56451003D6F34 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37505B29E56451003D6F34 /* Constant.swift */; };
+		0D37505F29E564A1003D6F34 /* SessionSetupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37505E29E564A1003D6F34 /* SessionSetupResult.swift */; };
+		0D37506229E567E2003D6F34 /* AVCaptureVideoOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D37506129E567E2003D6F34 /* AVCaptureVideoOrientation.swift */; };
+		0D37506529E64DD0003D6F34 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D37506729E64DD0003D6F34 /* Localizable.strings */; };
+		0D3750C229E6B130003D6F34 /* HolisticTracker.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3750C029E6B12A003D6F34 /* HolisticTracker.xcframework */; };
+		0D3750C329E6B131003D6F34 /* HolisticTracker.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3750C029E6B12A003D6F34 /* HolisticTracker.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D3750C629E79A34003D6F34 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750C529E79A34003D6F34 /* Hand.swift */; };
+		0D3750C829E79A5E003D6F34 /* HandKeyPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750C729E79A5E003D6F34 /* HandKeyPoint.swift */; };
+		0D3750CA29E79A6F003D6F34 /* HandPartName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750C929E79A6F003D6F34 /* HandPartName.swift */; };
+		0D3750CC29E79A87003D6F34 /* HandKeyPointName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750CB29E79A87003D6F34 /* HandKeyPointName.swift */; };
+		0D3750CF29E79ABA003D6F34 /* Point3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750CE29E79ABA003D6F34 /* Point3D.swift */; };
+		0D3750D129E79ADE003D6F34 /* KeyPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750D029E79ADE003D6F34 /* KeyPoint.swift */; };
+		0D3750D329E79CFB003D6F34 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750D229E79CFB003D6F34 /* Double.swift */; };
+		0D3750D529E79D2E003D6F34 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750D429E79D2E003D6F34 /* Axis.swift */; };
+		0D3750D729E7BC20003D6F34 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3750D629E7BC20003D6F34 /* UIImage.swift */; };
+		0D43FDFE29EF82DE0028B7F9 /* EyeExerciseTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43FDFD29EF82DE0028B7F9 /* EyeExerciseTwo.swift */; };
+		0D43FE0029EF82E50028B7F9 /* EyeExerciseThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43FDFF29EF82E50028B7F9 /* EyeExerciseThree.swift */; };
+		0D43FE0229EF96B10028B7F9 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43FE0129EF96B10028B7F9 /* ProgressBarView.swift */; };
+		0DB56CBD29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CBC29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift */; };
+		0DB56CC029E7C0DE00D36AD5 /* HandKeyLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CBF29E7C0DE00D36AD5 /* HandKeyLine.swift */; };
+		0DB56CC229E941CD00D36AD5 /* EyeExerciseAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC129E941CD00D36AD5 /* EyeExerciseAnalyzer.swift */; };
+		0DB56CC529E9421900D36AD5 /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC429E9421900D36AD5 /* Face.swift */; };
+		0DB56CC729E942C200D36AD5 /* FaceKeyPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC629E942C200D36AD5 /* FaceKeyPoint.swift */; };
+		0DB56CC929E9432B00D36AD5 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CC829E9432B00D36AD5 /* Side.swift */; };
+		0DB56CCB29E9435800D36AD5 /* FaceKeyPointName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56CCA29E9435800D36AD5 /* FaceKeyPointName.swift */; };
+		0DB56CCD29E97A6100D36AD5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB56CCC29E97A6100D36AD5 /* Media.xcassets */; };
+		0DDB049629F223BE0048449D /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB049529F223BE0048449D /* CountdownTimer.swift */; };
+		0DDB049D29F273C80048449D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB049C29F273C80048449D /* ResultViewController.swift */; };
+		0DFCDE8E29E97DD800E49B60 /* AbstractEyeExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE8D29E97DD800E49B60 /* AbstractEyeExercise.swift */; };
+		0DFCDE9129E97E3700E49B60 /* Criteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9029E97E3700E49B60 /* Criteria.swift */; };
+		0DFCDE9329E97E7A00E49B60 /* EyeExerciseOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9229E97E7A00E49B60 /* EyeExerciseOne.swift */; };
+		0DFCDE9529E9803B00E49B60 /* HandKeyPointWithSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9429E9803B00E49B60 /* HandKeyPointWithSide.swift */; };
+		0DFCDE9829EA887600E49B60 /* Holistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9729EA887600E49B60 /* Holistic.swift */; };
+		0DFCDE9B29EA905A00E49B60 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFCDE9A29EA905A00E49B60 /* CustomError.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0D37505729E562D4003D6F34 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0D3750C329E6B131003D6F34 /* HolisticTracker.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0D03B5FB29F6475A003B0D06 /* SelectEyeExercisesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEyeExercisesTableViewCell.swift; sourceTree = "<group>"; };
+		0D03B5FC29F6475A003B0D06 /* SelectEyeExercisesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectEyeExercisesTableViewCell.xib; sourceTree = "<group>"; };
+		0D37503329E53D46003D6F34 /* CareYourEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareYourEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D37503629E53D46003D6F34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0D37503829E53D46003D6F34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0D37503A29E53D46003D6F34 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		0D37503D29E53D46003D6F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0D37503F29E53D47003D6F34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D37504229E53D47003D6F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0D37504A29E5609E003D6F34 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		0D37505029E56252003D6F34 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		0D37505929E5637F003D6F34 /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
+		0D37505B29E56451003D6F34 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0D37505E29E564A1003D6F34 /* SessionSetupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSetupResult.swift; sourceTree = "<group>"; };
+		0D37506129E567E2003D6F34 /* AVCaptureVideoOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureVideoOrientation.swift; sourceTree = "<group>"; };
+		0D37506629E64DD0003D6F34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0D37506A29E64EDF003D6F34 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
+		0D37506B29E64EDF003D6F34 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0D37506C29E64EDF003D6F34 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0D37506D29E64EE7003D6F34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		0D37506E29E64EE7003D6F34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0D37506F29E64EE7003D6F34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0D37507029E64EEB003D6F34 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		0D37507129E64EEB003D6F34 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0D37507229E64EEB003D6F34 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0D37507B29E65D7A003D6F34 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D37509D29E6A8DF003D6F34 /* CareYourEyes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CareYourEyes-Bridging-Header.h"; sourceTree = "<group>"; };
+		0D3750C029E6B12A003D6F34 /* HolisticTracker.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HolisticTracker.xcframework; sourceTree = "<group>"; };
+		0D3750C529E79A34003D6F34 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		0D3750C729E79A5E003D6F34 /* HandKeyPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandKeyPoint.swift; sourceTree = "<group>"; };
+		0D3750C929E79A6F003D6F34 /* HandPartName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandPartName.swift; sourceTree = "<group>"; };
+		0D3750CB29E79A87003D6F34 /* HandKeyPointName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandKeyPointName.swift; sourceTree = "<group>"; };
+		0D3750CE29E79ABA003D6F34 /* Point3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point3D.swift; sourceTree = "<group>"; };
+		0D3750D029E79ADE003D6F34 /* KeyPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPoint.swift; sourceTree = "<group>"; };
+		0D3750D229E79CFB003D6F34 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		0D3750D429E79D2E003D6F34 /* Axis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
+		0D3750D629E7BC20003D6F34 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		0D43FDFD29EF82DE0028B7F9 /* EyeExerciseTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeExerciseTwo.swift; sourceTree = "<group>"; };
+		0D43FDFF29EF82E50028B7F9 /* EyeExerciseThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeExerciseThree.swift; sourceTree = "<group>"; };
+		0D43FE0129EF96B10028B7F9 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		0DB56CBC29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewExtraInformation.swift; sourceTree = "<group>"; };
+		0DB56CBF29E7C0DE00D36AD5 /* HandKeyLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandKeyLine.swift; sourceTree = "<group>"; };
+		0DB56CC129E941CD00D36AD5 /* EyeExerciseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeExerciseAnalyzer.swift; sourceTree = "<group>"; };
+		0DB56CC429E9421900D36AD5 /* Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
+		0DB56CC629E942C200D36AD5 /* FaceKeyPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceKeyPoint.swift; sourceTree = "<group>"; };
+		0DB56CC829E9432B00D36AD5 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
+		0DB56CCA29E9435800D36AD5 /* FaceKeyPointName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceKeyPointName.swift; sourceTree = "<group>"; };
+		0DB56CCC29E97A6100D36AD5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		0DDB049529F223BE0048449D /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
+		0DDB049C29F273C80048449D /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		0DFCDE8D29E97DD800E49B60 /* AbstractEyeExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractEyeExercise.swift; sourceTree = "<group>"; };
+		0DFCDE9029E97E3700E49B60 /* Criteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criteria.swift; sourceTree = "<group>"; };
+		0DFCDE9229E97E7A00E49B60 /* EyeExerciseOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeExerciseOne.swift; sourceTree = "<group>"; };
+		0DFCDE9429E9803B00E49B60 /* HandKeyPointWithSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandKeyPointWithSide.swift; sourceTree = "<group>"; };
+		0DFCDE9729EA887600E49B60 /* Holistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holistic.swift; sourceTree = "<group>"; };
+		0DFCDE9A29EA905A00E49B60 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D37503029E53D46003D6F34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D3750C229E6B130003D6F34 /* HolisticTracker.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D37502A29E53D46003D6F34 = {
+			isa = PBXGroup;
+			children = (
+				0D37503529E53D46003D6F34 /* CareYourEyes */,
+				0D37503429E53D46003D6F34 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D37503429E53D46003D6F34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D37503329E53D46003D6F34 /* CareYourEyes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D37503529E53D46003D6F34 /* CareYourEyes */ = {
+			isa = PBXGroup;
+			children = (
+				0D37504D29E561F7003D6F34 /* Views */,
+				0D37504C29E561DB003D6F34 /* Controllers */,
+				0D37505829E56363003D6F34 /* Models */,
+				0D37506029E567CC003D6F34 /* Extensions */,
+				0D37505229E562A9003D6F34 /* Frameworks */,
+				0DFCDE9929EA904F00E49B60 /* Error */,
+				0D37503629E53D46003D6F34 /* AppDelegate.swift */,
+				0D37503829E53D46003D6F34 /* SceneDelegate.swift */,
+				0D37505B29E56451003D6F34 /* Constant.swift */,
+				0D37507B29E65D7A003D6F34 /* Info.plist */,
+				0D37506729E64DD0003D6F34 /* Localizable.strings */,
+				0DB56CCC29E97A6100D36AD5 /* Media.xcassets */,
+			);
+			path = CareYourEyes;
+			sourceTree = "<group>";
+		};
+		0D37504C29E561DB003D6F34 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D37503A29E53D46003D6F34 /* InitialViewController.swift */,
+				0D37504A29E5609E003D6F34 /* CameraViewController.swift */,
+				0DDB049C29F273C80048449D /* ResultViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0D37504D29E561F7003D6F34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0D37503C29E53D46003D6F34 /* Main.storyboard */,
+				0D37504129E53D47003D6F34 /* LaunchScreen.storyboard */,
+				0DB56CBE29E7C0A100D36AD5 /* OverlayView */,
+				0DDB04A229F636F00048449D /* SelectEyeExercisesTableViewCell */,
+				0D43FE0129EF96B10028B7F9 /* ProgressBarView.swift */,
+				0D37503F29E53D47003D6F34 /* Assets.xcassets */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0D37505229E562A9003D6F34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D3750C029E6B12A003D6F34 /* HolisticTracker.xcframework */,
+				0D37509D29E6A8DF003D6F34 /* CareYourEyes-Bridging-Header.h */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D37505829E56363003D6F34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0D37505D29E56488003D6F34 /* Camera Feed */,
+				0DFCDE9629EA883E00E49B60 /* Holistic */,
+				0DB56CC329E9420900D36AD5 /* Face */,
+				0D3750C429E79A20003D6F34 /* Hand */,
+				0D3750CD29E79AA5003D6F34 /* Analyze */,
+				0DFCDE8F29E97DEC00E49B60 /* Movement */,
+				0DDB049429F223A00048449D /* Timer */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0D37505D29E56488003D6F34 /* Camera Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0D37505929E5637F003D6F34 /* CameraFeedManager.swift */,
+				0D37505E29E564A1003D6F34 /* SessionSetupResult.swift */,
+			);
+			path = "Camera Feed";
+			sourceTree = "<group>";
+		};
+		0D37506029E567CC003D6F34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0D37506129E567E2003D6F34 /* AVCaptureVideoOrientation.swift */,
+				0D3750D229E79CFB003D6F34 /* Double.swift */,
+				0D3750D629E7BC20003D6F34 /* UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0D3750C429E79A20003D6F34 /* Hand */ = {
+			isa = PBXGroup;
+			children = (
+				0D3750C529E79A34003D6F34 /* Hand.swift */,
+				0DFCDE9429E9803B00E49B60 /* HandKeyPointWithSide.swift */,
+				0D3750C729E79A5E003D6F34 /* HandKeyPoint.swift */,
+				0DB56CBF29E7C0DE00D36AD5 /* HandKeyLine.swift */,
+				0D3750C929E79A6F003D6F34 /* HandPartName.swift */,
+				0D3750CB29E79A87003D6F34 /* HandKeyPointName.swift */,
+			);
+			path = Hand;
+			sourceTree = "<group>";
+		};
+		0D3750CD29E79AA5003D6F34 /* Analyze */ = {
+			isa = PBXGroup;
+			children = (
+				0DB56CC129E941CD00D36AD5 /* EyeExerciseAnalyzer.swift */,
+				0D3750CE29E79ABA003D6F34 /* Point3D.swift */,
+				0D3750D429E79D2E003D6F34 /* Axis.swift */,
+				0D3750D029E79ADE003D6F34 /* KeyPoint.swift */,
+			);
+			path = Analyze;
+			sourceTree = "<group>";
+		};
+		0DB56CBE29E7C0A100D36AD5 /* OverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				0D37505029E56252003D6F34 /* OverlayView.swift */,
+				0DB56CBC29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift */,
+			);
+			path = OverlayView;
+			sourceTree = "<group>";
+		};
+		0DB56CC329E9420900D36AD5 /* Face */ = {
+			isa = PBXGroup;
+			children = (
+				0DB56CC429E9421900D36AD5 /* Face.swift */,
+				0DB56CC629E942C200D36AD5 /* FaceKeyPoint.swift */,
+				0DB56CCA29E9435800D36AD5 /* FaceKeyPointName.swift */,
+				0DB56CC829E9432B00D36AD5 /* Side.swift */,
+			);
+			path = Face;
+			sourceTree = "<group>";
+		};
+		0DDB049429F223A00048449D /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				0DDB049529F223BE0048449D /* CountdownTimer.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		0DDB04A229F636F00048449D /* SelectEyeExercisesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0D03B5FB29F6475A003B0D06 /* SelectEyeExercisesTableViewCell.swift */,
+				0D03B5FC29F6475A003B0D06 /* SelectEyeExercisesTableViewCell.xib */,
+			);
+			path = SelectEyeExercisesTableViewCell;
+			sourceTree = "<group>";
+		};
+		0DFCDE8F29E97DEC00E49B60 /* Movement */ = {
+			isa = PBXGroup;
+			children = (
+				0DFCDE8D29E97DD800E49B60 /* AbstractEyeExercise.swift */,
+				0DFCDE9229E97E7A00E49B60 /* EyeExerciseOne.swift */,
+				0D43FDFD29EF82DE0028B7F9 /* EyeExerciseTwo.swift */,
+				0D43FDFF29EF82E50028B7F9 /* EyeExerciseThree.swift */,
+				0DFCDE9029E97E3700E49B60 /* Criteria.swift */,
+			);
+			path = Movement;
+			sourceTree = "<group>";
+		};
+		0DFCDE9629EA883E00E49B60 /* Holistic */ = {
+			isa = PBXGroup;
+			children = (
+				0DFCDE9729EA887600E49B60 /* Holistic.swift */,
+			);
+			path = Holistic;
+			sourceTree = "<group>";
+		};
+		0DFCDE9929EA904F00E49B60 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				0DFCDE9A29EA905A00E49B60 /* CustomError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D37503229E53D46003D6F34 /* CareYourEyes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D37504729E53D47003D6F34 /* Build configuration list for PBXNativeTarget "CareYourEyes" */;
+			buildPhases = (
+				0D37502F29E53D46003D6F34 /* Sources */,
+				0D37503029E53D46003D6F34 /* Frameworks */,
+				0D37503129E53D46003D6F34 /* Resources */,
+				0D37505729E562D4003D6F34 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CareYourEyes;
+			productName = CareYourEyes;
+			productReference = 0D37503329E53D46003D6F34 /* CareYourEyes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D37502B29E53D46003D6F34 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					0D37503229E53D46003D6F34 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 0D37502E29E53D46003D6F34 /* Build configuration list for PBXProject "CareYourEyes" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-HK",
+				"zh-Hans",
+				"zh-Hant",
+			);
+			mainGroup = 0D37502A29E53D46003D6F34;
+			productRefGroup = 0D37503429E53D46003D6F34 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D37503229E53D46003D6F34 /* CareYourEyes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D37503129E53D46003D6F34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D03B5FE29F6475A003B0D06 /* SelectEyeExercisesTableViewCell.xib in Resources */,
+				0DB56CCD29E97A6100D36AD5 /* Media.xcassets in Resources */,
+				0D37504329E53D47003D6F34 /* LaunchScreen.storyboard in Resources */,
+				0D37506529E64DD0003D6F34 /* Localizable.strings in Resources */,
+				0D37504029E53D47003D6F34 /* Assets.xcassets in Resources */,
+				0D37503E29E53D46003D6F34 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D37502F29E53D46003D6F34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D37505C29E56451003D6F34 /* Constant.swift in Sources */,
+				0D37503B29E53D46003D6F34 /* InitialViewController.swift in Sources */,
+				0DFCDE9829EA887600E49B60 /* Holistic.swift in Sources */,
+				0DB56CC929E9432B00D36AD5 /* Side.swift in Sources */,
+				0D3750D329E79CFB003D6F34 /* Double.swift in Sources */,
+				0D3750D529E79D2E003D6F34 /* Axis.swift in Sources */,
+				0D43FE0029EF82E50028B7F9 /* EyeExerciseThree.swift in Sources */,
+				0DFCDE9529E9803B00E49B60 /* HandKeyPointWithSide.swift in Sources */,
+				0DB56CC029E7C0DE00D36AD5 /* HandKeyLine.swift in Sources */,
+				0D37504B29E5609E003D6F34 /* CameraViewController.swift in Sources */,
+				0DDB049629F223BE0048449D /* CountdownTimer.swift in Sources */,
+				0D3750C829E79A5E003D6F34 /* HandKeyPoint.swift in Sources */,
+				0D37506229E567E2003D6F34 /* AVCaptureVideoOrientation.swift in Sources */,
+				0DB56CC729E942C200D36AD5 /* FaceKeyPoint.swift in Sources */,
+				0DFCDE9B29EA905A00E49B60 /* CustomError.swift in Sources */,
+				0D37503729E53D46003D6F34 /* AppDelegate.swift in Sources */,
+				0DB56CC229E941CD00D36AD5 /* EyeExerciseAnalyzer.swift in Sources */,
+				0DB56CC529E9421900D36AD5 /* Face.swift in Sources */,
+				0D37503929E53D46003D6F34 /* SceneDelegate.swift in Sources */,
+				0D43FDFE29EF82DE0028B7F9 /* EyeExerciseTwo.swift in Sources */,
+				0D3750C629E79A34003D6F34 /* Hand.swift in Sources */,
+				0DFCDE9129E97E3700E49B60 /* Criteria.swift in Sources */,
+				0D3750CA29E79A6F003D6F34 /* HandPartName.swift in Sources */,
+				0D3750CC29E79A87003D6F34 /* HandKeyPointName.swift in Sources */,
+				0D37505A29E5637F003D6F34 /* CameraFeedManager.swift in Sources */,
+				0D03B5FD29F6475A003B0D06 /* SelectEyeExercisesTableViewCell.swift in Sources */,
+				0DFCDE8E29E97DD800E49B60 /* AbstractEyeExercise.swift in Sources */,
+				0D37505129E56252003D6F34 /* OverlayView.swift in Sources */,
+				0D37505F29E564A1003D6F34 /* SessionSetupResult.swift in Sources */,
+				0DB56CBD29E7C09C00D36AD5 /* OverlayViewExtraInformation.swift in Sources */,
+				0DB56CCB29E9435800D36AD5 /* FaceKeyPointName.swift in Sources */,
+				0D3750D729E7BC20003D6F34 /* UIImage.swift in Sources */,
+				0DFCDE9329E97E7A00E49B60 /* EyeExerciseOne.swift in Sources */,
+				0D3750D129E79ADE003D6F34 /* KeyPoint.swift in Sources */,
+				0D3750CF29E79ABA003D6F34 /* Point3D.swift in Sources */,
+				0D43FE0229EF96B10028B7F9 /* ProgressBarView.swift in Sources */,
+				0DDB049D29F273C80048449D /* ResultViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0D37503C29E53D46003D6F34 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D37503D29E53D46003D6F34 /* Base */,
+				0D37506A29E64EDF003D6F34 /* zh-HK */,
+				0D37506D29E64EE7003D6F34 /* zh-Hans */,
+				0D37507029E64EEB003D6F34 /* zh-Hant */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0D37504129E53D47003D6F34 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D37504229E53D47003D6F34 /* Base */,
+				0D37506B29E64EDF003D6F34 /* zh-HK */,
+				0D37506E29E64EE7003D6F34 /* zh-Hans */,
+				0D37507129E64EEB003D6F34 /* zh-Hant */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0D37506729E64DD0003D6F34 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D37506629E64DD0003D6F34 /* en */,
+				0D37506C29E64EDF003D6F34 /* zh-HK */,
+				0D37506F29E64EE7003D6F34 /* zh-Hans */,
+				0D37507229E64EEB003D6F34 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D37504529E53D47003D6F34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "CareYourEyes/Frameworks/CareYourEyes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0D37504629E53D47003D6F34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "CareYourEyes/Frameworks/CareYourEyes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0D37504829E53D47003D6F34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T3N6692BLL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CareYourEyes/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AcuRelALx;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera to analyze eye exercises";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lam.will.CareYourEyes3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0D37504929E53D47003D6F34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T3N6692BLL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CareYourEyes/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AcuRelALx;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera to analyze eye exercises";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lam.will.CareYourEyes3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D37502E29E53D46003D6F34 /* Build configuration list for PBXProject "CareYourEyes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D37504529E53D47003D6F34 /* Debug */,
+				0D37504629E53D47003D6F34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D37504729E53D47003D6F34 /* Build configuration list for PBXNativeTarget "CareYourEyes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D37504829E53D47003D6F34 /* Debug */,
+				0D37504929E53D47003D6F34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D37502B29E53D46003D6F34 /* Project object */;
+}
